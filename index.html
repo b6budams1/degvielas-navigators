@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degvielas Navigators</title>
+    <style>
+        :root { --primary: #2563eb; --success: #16a34a; --bg: #f8fafc; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); padding: 20px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        .selector-group { display: flex; gap: 10px; justify-content: center; margin: 15px 0; }
+        .btn-select { padding: 8px 16px; border: 1px solid #e2e8f0; background: white; border-radius: 20px; cursor: pointer; font-weight: 600; }
+        .btn-select.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 6px rgb(0 0 0 / 0.1); border-left: 6px solid #e2e8f0; position: relative; }
+        .card.best { border-left-color: var(--success); }
+        .badge { position: absolute; top: 15px; right: 20px; font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; background: #dcfce7; color: #166534; }
+        .network { font-weight: bold; font-size: 18px; }
+        .address { font-size: 14px; color: #64748b; display: block; }
+        .price-grid { display: grid; grid-template-columns: 1fr 1fr; margin: 15px 0; gap: 10px; }
+        .price-box { background: #f1f5f9; padding: 10px; border-radius: 8px; text-align: center; }
+        .btn { display: block; width: 100%; padding: 14px; background: var(--primary); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>⛽ Degvielas Navigators</h1>
+        <p id="update-time" style="font-size:12px; color:#64748b">Meklējam datus...</p>
+        <div class="selector-group">
+            <button class="btn-select active" onclick="changeFuel('95')">95</button>
+            <button class="btn-select" onclick="changeFuel('98')">98</button>
+            <button class="btn-select" onclick="changeFuel('D')">Dīzelis</button>
+        </div>
+    </header>
+    <div id="loading" style="text-align:center">📍 Meklējam cenas un lokāciju...</div>
+    <div id="results"></div>
+</div>
+<script>
+    let currentFuel = '95';
+    let userCoords = { lat: 56.9496, lon: 24.1052 };
+    window.allStations = [];
+
+    function changeFuel(t) {
+        currentFuel = t;
+        document.querySelectorAll('.btn-select').forEach(b => b.classList.toggle('active', b.innerText.includes(t) || (t==='D' && b.innerText==='Dīzelis')));
+        render();
+    }
+
+    async function init() {
+        try {
+            const r = await fetch('data.json');
+            const d = await r.json();
+            window.allStations = d.stations;
+            document.getElementById('update-time').innerText = "Atjaunots: " + new Date(d.updatedAt).toLocaleTimeString();
+            navigator.geolocation.getCurrentPosition(p => {
+                userCoords = { lat: p.coords.latitude, lon: p.coords.longitude };
+                render();
+            }, () => render());
+        } catch (e) { document.getElementById('loading').innerText = "❌ Kļūda ielādējot datus."; }
+    }
+
+    function render() {
+        const res = document.getElementById('results');
+        document.getElementById('loading').style.display = 'none';
+        const p = 0.017453292519943295, c = Math.cos;
+        const analyzed = window.allStations.filter(s => s.type.includes(currentFuel)).map(s => {
+            const dist = 12742 * Math.asin(Math.sqrt(0.5 - c((s.lat - userCoords.lat) * p)/2 + c(userCoords.lat * p) * c(s.lat * p) * (1 - c((s.lon - userCoords.lon) * p))/2));
+            return { ...s, dist, eff: (40 * s.price + dist * 0.15) / 40 };
+        }).sort((a, b) => a.eff - b.eff);
+
+        res.innerHTML = analyzed.map((s, i) => `
+            <div class="card ${i===0?'best':''}">
+                ${i===0?'<span class="badge">Izdevīgākais</span>':''}
+                <span class="network">${s.network} (${s.type})</span>
+                <span class="address">${s.address}</span>
+                <div class="price-grid">
+                    <div class="price-box">Cena: <b>${s.price.toFixed(3)}</b></div>
+                    <div class="price-box">Attālums: <b>${s.dist.toFixed(1)} km</b></div>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lon}" class="btn">🚀 BRAUKT</a>
+            </div>`).join('');
+    }
+    init();
+</script>
+</body>
+</html>
