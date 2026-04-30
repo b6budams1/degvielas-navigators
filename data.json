@@ -1,101 +1,197 @@
 {
-  "updatedAt": "2026-04-30T20:14:24.519Z",
+  "updatedAt": "2026-04-30T20:39:58.578Z",
   "stations": [
     {
       "network": "Circle K",
       "type": "95miles",
       "price": 1.814,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "95miles",
+      "price": 1.814,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "95miles",
+      "price": 1.814,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Circle K",
       "type": "98miles+",
       "price": 1.884,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "98miles+",
+      "price": 1.884,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "98miles+",
+      "price": 1.884,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Circle K",
       "type": "Dmiles",
       "price": 1.954,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles",
+      "price": 1.954,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles",
+      "price": 1.954,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Circle K",
       "type": "Dmiles+",
       "price": 2.084,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles+",
+      "price": 2.084,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles+",
+      "price": 2.084,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Circle K",
       "type": "miles+ XTL",
       "price": 2.49,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "miles+ XTL",
+      "price": 2.49,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "miles+ XTL",
+      "price": 2.49,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Circle K",
       "type": "Autogāze",
       "price": 1.055,
-      "address": "Visā tīklā",
-      "lat": 56.95,
-      "lon": 24.1
+      "address": "Brīvības iela 176",
+      "lat": 56.9657,
+      "lon": 24.1356
+    },
+    {
+      "network": "Circle K",
+      "type": "Autogāze",
+      "price": 1.055,
+      "address": "K. Ulmaņa gatve 110",
+      "lat": 56.9248,
+      "lon": 24.0305
+    },
+    {
+      "network": "Circle K",
+      "type": "Autogāze",
+      "price": 1.055,
+      "address": "Duntes iela 13",
+      "lat": 56.9745,
+      "lon": 24.1221
     },
     {
       "network": "Virši",
       "type": "DD",
       "price": 1.867,
       "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     },
     {
       "network": "Virši",
       "type": "95E",
       "price": 1.797,
       "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     },
     {
       "network": "Virši",
       "type": "98E",
       "price": 1.897,
       "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     },
     {
       "network": "Virši",
       "type": "CNG",
       "price": 1.774,
       "address": "Visā Viršu tīklā",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     },
     {
       "network": "Virši",
       "type": "LPG",
       "price": 1.055,
       "address": "Visā Viršu tīklā",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     },
     {
       "network": "Virši",
       "type": "AdBLUE",
       "price": 0.845,
       "address": "Visā Viršu tīklā",
-      "lat": 56.92,
-      "lon": 24.05
+      "lat": 56.9622,
+      "lon": 24.1205
     }
   ]
 }
