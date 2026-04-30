@@ -20,7 +20,8 @@
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; margin: 15px 0; gap: 10px; }
         .price-box { background: #f1f5f9; padding: 12px; border-radius: 10px; text-align: center; }
         .price-label { font-size: 11px; color: #64748b; display: block; margin-bottom: 2px; }
-        .btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 16px; }
+        .btn { display: block; width: 100%; padding: 15px; background: #33ccff; color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 10px; }
+        .btn-google { background: #e2e8f0; color: #1e293b; font-size: 12px; padding: 8px; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -59,9 +60,9 @@
                 navigator.geolocation.getCurrentPosition(p => {
                     userCoords = { lat: p.coords.latitude, lon: p.coords.longitude };
                     render();
-                }, () => render());
+                }, () => render(), { enableHighAccuracy: true });
             } else { render(); }
-        } catch (e) { document.getElementById('loading').innerText = "❌ Kļūda: lapa vēl tiek sagatavota."; }
+        } catch (e) { document.getElementById('loading').innerText = "❌ Kļūda ielādējot datus."; }
     }
 
     function render() {
@@ -71,20 +72,21 @@
         
         const filtered = window.allStations.filter(s => s.type.includes(currentFuel));
         const analyzed = filtered.map(s => {
-            const dist = 12742 * Math.asin(Math.sqrt(0.5 - c((s.lat - userCoords.lat) * p)/2 + c(userCoords.lat * p) * c(s.lat * p) * (1 - c((lon2 = s.lon - userCoords.lon) * p))/2));
+            const dist = 12742 * Math.asin(Math.sqrt(0.5 - c((s.lat - userCoords.lat) * p)/2 + c(userCoords.lat * p) * c(s.lat * p) * (1 - c((s.lon - userCoords.lon) * p))/2));
             return { ...s, dist, eff: (40 * s.price + dist * 0.15) / 40 };
         }).sort((a, b) => a.eff - b.eff);
 
         res.innerHTML = analyzed.map((s, i) => `
             <div class="card ${i===0?'best':''}">
                 ${i===0?'<span class="badge">Izdevīgākais</span>':''}
-                <span class="network">${s.network} <small style="font-weight:normal; color:#64748b">(${s.type})</small></span>
+                <span class="network">${s.network} <small>(${s.type})</small></span>
                 <span class="address">${s.address}</span>
                 <div class="price-grid">
-                    <div class="price-box"><span class="price-label">Tablo</span><b>${s.price.toFixed(3)}</b></div>
+                    <div class="price-box"><span class="price-label">Cena</span><b>${s.price.toFixed(3)}</b></div>
                     <div class="price-box"><span class="price-label">Attālums</span><b>${s.dist.toFixed(1)} km</b></div>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lon}" class="btn">🚀 BRAUKT</a>
+                <a href="waze://?ll=${s.lat},${s.lon}&navigate=yes" class="btn">🚙 BRAUKT AR WAZE</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lon}" class="btn btn-google">Google Maps (rezervei)</a>
             </div>`).join('') || '<p style="text-align:center">Nav datu šai degvielai.</p>';
     }
     init();
