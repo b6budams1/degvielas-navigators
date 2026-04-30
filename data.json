@@ -1,1 +1,101 @@
-{"updatedAt": "2024-04-30T20:00:00.000Z", "stations": []}
+{
+  "updatedAt": "2026-04-30T20:14:24.519Z",
+  "stations": [
+    {
+      "network": "Circle K",
+      "type": "95miles",
+      "price": 1.814,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Circle K",
+      "type": "98miles+",
+      "price": 1.884,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles",
+      "price": 1.954,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Circle K",
+      "type": "Dmiles+",
+      "price": 2.084,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Circle K",
+      "type": "miles+ XTL",
+      "price": 2.49,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Circle K",
+      "type": "Autogāze",
+      "price": 1.055,
+      "address": "Visā tīklā",
+      "lat": 56.95,
+      "lon": 24.1
+    },
+    {
+      "network": "Virši",
+      "type": "DD",
+      "price": 1.867,
+      "address": "Brīvības gatve 297, RĪga, LV-1006",
+      "lat": 56.92,
+      "lon": 24.05
+    },
+    {
+      "network": "Virši",
+      "type": "95E",
+      "price": 1.797,
+      "address": "Brīvības gatve 297, RĪga, LV-1006",
+      "lat": 56.92,
+      "lon": 24.05
+    },
+    {
+      "network": "Virši",
+      "type": "98E",
+      "price": 1.897,
+      "address": "Brīvības gatve 297, RĪga, LV-1006",
+      "lat": 56.92,
+      "lon": 24.05
+    },
+    {
+      "network": "Virši",
+      "type": "CNG",
+      "price": 1.774,
+      "address": "Visā Viršu tīklā",
+      "lat": 56.92,
+      "lon": 24.05
+    },
+    {
+      "network": "Virši",
+      "type": "LPG",
+      "price": 1.055,
+      "address": "Visā Viršu tīklā",
+      "lat": 56.92,
+      "lon": 24.05
+    },
+    {
+      "network": "Virši",
+      "type": "AdBLUE",
+      "price": 0.845,
+      "address": "Visā Viršu tīklā",
+      "lat": 56.92,
+      "lon": 24.05
+    }
+  ]
+}
