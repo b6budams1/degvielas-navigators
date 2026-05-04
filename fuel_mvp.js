@@ -1,63 +1,52 @@
 const axios = require('axios');
-const cheerio = require('cheerio');
 const fs = require('fs');
 
-const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36' };
+async function fetchElectricityPrices() {
+    console.log("Meklējam Nord Pool cenas Latvijai...");
+    
+    const now = new Date();
+    // Iegūstam datus par pēdējām 24h un nākamo dienu (prognoze)
+    const start = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
+    const end = new Date(now.getTime() + 48 * 60 * 60 * 1000).toISOString();
+    
+    const url = `https://dashboard.elering.ee/api/nps/price?start=${start}&end=${end}`;
 
-// Dažas reālas staciju lokācijas precizitātei
-const stationDatabase = {
-    'Circle K': [
-        { address: 'Brīvības iela 176', lat: 56.9657, lon: 24.1356 },
-        { address: 'K. Ulmaņa gatve 110', lat: 56.9248, lon: 24.0305 },
-        { address: 'Duntes iela 13', lat: 56.9745, lon: 24.1221 }
-    ],
-    'Virši': [
-        { address: 'Skanstes iela 2', lat: 56.9622, lon: 24.1205 },
-        { address: 'Pildas iela 10', lat: 56.9378, lon: 24.1755 },
-        { address: 'Lubānas iela 102', lat: 56.9315, lon: 24.1988 }
-    ]
-};
-
-async function fetchPrices() {
-    console.log("Atjaunojam cenas un lokācijas...");
-    const results = [];
-
-    // Circle K
     try {
-        const { data } = await axios.get('https://www.circlek.lv/degviela-miles/degvielas-cenas', { headers });
-        const $ = cheerio.load(data);
-        $('table tbody tr').each((i, el) => {
-            const type = $(el).find('td').eq(0).text().trim();
-            const price = parseFloat($(el).find('td').eq(1).text().trim().replace(' EUR', ''));
-            if (type && price) {
-                // Pievienojam vairākas lokācijas Circle K, lai rādītu reālus punktus
-                stationDatabase['Circle K'].forEach(loc => {
-                    results.push({ network: 'Circle K', type, price, address: loc.address, lat: loc.lat, lon: loc.lon });
-                });
-            }
-        });
-    } catch (e) { console.log("Circle K kļūda"); }
+        const response = await axios.get(url);
+        // Atlasām tikai Latvijas (lv) zonu
+        const pricesLV = response.data.data.lv; 
 
-    // Virši
-    try {
-        const { data } = await axios.get('https://www.virsi.lv/lv/privatpersonam/degviela/degvielas-un-elektrouzlades-cenas', { headers });
-        const $ = cheerio.load(data);
-        $('.fuel-block .price-card').each((i, el) => {
-            const type = $(el).find('.price span').eq(0).text().trim();
-            const price = parseFloat($(el).find('.price span').eq(1).text().trim());
-            const address = $(el).find('.address').text().trim();
-            
-            // Mēģinām atrast koordinātas pēc adreses vai iedodam tuvāko no bāzes
-            const loc = stationDatabase['Virši'].find(v => address.includes(v.address.split(' ')[0])) || stationDatabase['Virši'][0];
-            
-            if (type && price) {
-                results.push({ network: 'Virši', type, price, address: address || loc.address, lat: loc.lat, lon: loc.lon });
-            }
-        });
-    } catch (e) { console.log("Virši kļūda"); }
+        if (!pricesLV || pricesLV.length === 0) throw new Error("Nav datu");
 
-    const output = { updatedAt: new Date().toISOString(), stations: results };
-    fs.writeFileSync('data.json', JSON.stringify(output, null, 2));
+        // Aprēķinām vidējo cenu bāzes līmenim
+        const avgPrice = pricesLV.reduce((sum, p) => sum + p.price, 0) / pricesLV.length;
+
+        const data = {
+            updatedAt: new Date().toISOString(),
+            average: (avgPrice / 10).toFixed(2), // Centi/kWh
+            prices: pricesLV.map(p => {
+                const priceCents = (p.price / 10).toFixed(2);
+                // Nosakām krāsu: dārgs (>20% virs vidējā), lēts (<20% zem vidējā)
+                let color = '#fbbf24'; // Dzeltens (vidējs)
+                let label = 'Vidēja';
+                
+                if (p.price > avgPrice * 1.2) { color = '#ef4444'; label = 'Dārga'; }
+                if (p.price < avgPrice * 0.8) { color = '#22c55e'; label = 'Lēta'; }
+                
+                return {
+                    time: new Date(p.timestamp * 1000).toISOString(),
+                    price: priceCents,
+                    color: color,
+                    label: label
+                };
+            })
+        };
+
+        fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+        console.log("✅ Elektrības cenas veiksmīgi saglabātas!");
+    } catch (e) {
+        console.log("⚠️ Kļūda iegūstot cenas:", e.message);
+    }
 }
 
-fetchPrices();
+fetchElectricityPrices();
