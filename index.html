@@ -3,76 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektrības Luksofors</title>
+    <title>Elektrības Luksofors PRO</title>
     <style>
-        body { font-family: -apple-system, sans-serif; background: #f1f5f9; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .app { max-width: 450px; width: 100%; }
-        .main-card { background: white; border-radius: 24px; padding: 30px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 20px; transition: 0.5s; }
-        .status-dot { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; border: 8px solid #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .current-price { font-size: 48px; font-weight: 900; margin: 10px 0; color: #1e293b; }
-        .unit { font-size: 18px; color: #64748b; font-weight: normal; }
-        .advice { font-size: 18px; font-weight: 600; color: #334155; margin-top: 15px; }
-        .forecast { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .hour-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
-        .hour-row:last-child { border: none; }
-        .hour-time { font-weight: bold; color: #1e293b; }
-        .hour-price { padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 14px; }
+        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f8fafc; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; }
+        .container { max-width: 500px; margin: 0 auto; }
+        
+        .main-status { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 10px solid #e2e8f0; }
+        .price-now { font-size: 56px; font-weight: 900; margin: 10px 0; }
+        .unit { font-size: 18px; color: #64748b; font-weight: 400; }
+        
+        .nav-tabs { display: flex; gap: 10px; margin-bottom: 15px; }
+        .tab-btn { flex: 1; padding: 10px; border: none; background: #e2e8f0; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .tab-btn.active { background: #2563eb; color: white; }
+
+        .price-list { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #f1f5f9; }
+        .row.current { background: #f1f5f9; border-left: 5px solid #2563eb; }
+        .row-time { font-weight: 600; width: 60px; }
+        .row-price { font-weight: 800; padding: 5px 12px; border-radius: 8px; min-width: 80px; text-align: center; }
+
+        .notify-btn { width: 100%; padding: 15px; border: none; border-radius: 15px; background: #334155; color: white; font-weight: bold; margin-bottom: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .notify-btn:active { opacity: 0.8; }
+        
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .summary-item { background: white; padding: 15px; border-radius: 15px; text-align: center; font-size: 13px; }
+        .summary-val { display: block; font-size: 18px; font-weight: bold; margin-top: 5px; }
     </style>
 </head>
 <body>
-<div class="app">
-    <div id="main-ui" class="main-card">
-        <div id="status-dot" class="status-dot" style="background: #e2e8f0;"></div>
-        <div id="status-text" style="text-transform: uppercase; font-weight: 800; letter-spacing: 1px; color: #64748b;">Ielādē...</div>
-        <div class="current-price"><span id="price-now">--.--</span> <span class="unit">c/kWh</span></div>
-        <div id="advice-text" class="advice">Lūdzu, uzgaidiet...</div>
+<div class="container">
+    <div class="main-status" id="main-card">
+        <div id="status-label" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Ielādē...</div>
+        <div class="price-now" id="price-now">--.--<span class="unit">c/kWh</span></div>
+        <div id="advice-text" style="font-weight: 600; color: #475569;">Lūdzu, uzgaidiet...</div>
     </div>
 
-    <div class="forecast">
-        <h3 style="margin-top:0; font-size:16px; color:#64748b;">Prognoze tuvākajām stundām</h3>
-        <div id="forecast-list"></div>
+    <button class="notify-btn" onclick="requestNotifications()">
+        🔔 Ieslēgt paziņojumus par lēto laiku
+    </button>
+
+    <div class="summary-grid">
+        <div class="summary-item">Zemākā šodien <span class="summary-val" id="min-price" style="color: var(--green)">--.--</span></div>
+        <div class="summary-item">Augstākā šodien <span class="summary-val" id="max-price" style="color: var(--red)">--.--</span></div>
     </div>
-    <p id="update-time" style="text-align:center; font-size:11px; color:#94a3b8; margin-top:15px;"></p>
+
+    <div class="nav-tabs">
+        <button class="tab-btn active" id="tab-today" onclick="switchDay('today')">Šodien</button>
+        <button class="tab-btn" id="tab-tomorrow" onclick="switchDay('tomorrow')">Rītdiena</button>
+    </div>
+
+    <div class="price-list" id="price-list"></div>
+    <p id="update-info" style="text-align:center; font-size:11px; color:#94a3b8; margin-top:20px;"></p>
 </div>
 
 <script>
+    let allData = null;
+    let selectedDay = 'today';
+
+    async function requestNotifications() {
+        const permission = await Notification.requestPermission();
+        if (permission === "granted") alert("Paziņojumi ieslēgti! Mēs Tevi informēsim par 'zaļajām' stundām.");
+    }
+
+    function switchDay(day) {
+        selectedDay = day;
+        document.getElementById('tab-today').classList.toggle('active', day === 'today');
+        document.getElementById('tab-tomorrow').classList.toggle('active', day === 'tomorrow');
+        renderList();
+    }
+
     async function init() {
         try {
             const res = await fetch('data.json?v=' + Date.now());
-            const data = await res.json();
+            allData = await res.json();
             
             const now = new Date();
-            const currentHour = new Date(now.setMinutes(0,0,0)).toISOString();
-            
-            const prices = data.prices;
-            const current = prices.find(p => p.time === currentHour) || prices[0];
-            
-            // Atjaunojam galveno kartīti
-            document.getElementById('price-now').innerText = current.price;
-            document.getElementById('status-dot').style.background = current.color;
-            document.getElementById('status-text').innerText = current.label + " cena";
-            document.getElementById('status-text').style.color = current.color;
-            document.getElementById('update-time').innerText = "Atjaunots: " + new Date(data.updatedAt).toLocaleTimeString();
+            const currentHourStr = new Date(now.setMinutes(0,0,0)).toISOString();
+            const current = allData.prices.find(p => p.time === currentHourStr) || allData.prices[0];
 
-            // Ieteikumi
-            let advice = "Var lietot elektroierīces kā parasti.";
-            if (current.color === '#22c55e') advice = "✨ Izdevīgs laiks! Mazgā veļu, traukus vai lādē auto!";
-            if (current.color === '#ef4444') advice = "🛑 Dārgs laiks! Izslēdz liekās ierīces un pagaidi.";
+            // Galvenā informācija
+            document.getElementById('price-now').innerHTML = `${current.price}<span class="unit">c/kWh</span>`;
+            document.getElementById('main-card').style.borderTopColor = current.color;
+            document.getElementById('status-label').innerText = current.label + " cena";
+            document.getElementById('status-label').style.color = current.color;
+            
+            let advice = "Vidējs patēriņš.";
+            if (current.color.includes('22c55e')) advice = "✨ Lielisks laiks lielajiem darbiem!";
+            if (current.color.includes('ef4444')) advice = "🛑 Tagad labāk neko neslēgt iekšā.";
             document.getElementById('advice-text').innerText = advice;
 
-            // Prognoze
-            const upcoming = prices.filter(p => new Date(p.time) >= new Date(currentHour)).slice(1, 7);
-            document.getElementById('forecast-list').innerHTML = upcoming.map(p => `
-                <div class="hour-row">
-                    <span class="hour-time">${new Date(p.time).getHours()}:00</span>
-                    <span class="hour-price" style="background: ${p.color}20; color: ${p.color}">${p.price} c/kWh</span>
-                </div>
-            `).join('');
+            // Statistika
+            const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === new Date().getDate());
+            const min = Math.min(...todayPrices.map(p => p.price));
+            const max = Math.max(...todayPrices.map(p => p.price));
+            document.getElementById('min-price').innerText = min.toFixed(2);
+            document.getElementById('max-price').innerText = max.toFixed(2);
+            document.getElementById('update-info').innerText = "Dati atjaunoti: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
 
-        } catch (e) {
-            document.getElementById('advice-text').innerText = "Kļūda ielādējot datus. Palaidiet robotu GitHub Actions!";
+            renderList();
+            checkNotification(current);
+
+        } catch (e) { console.error(e); }
+    }
+
+    function renderList() {
+        const listDiv = document.getElementById('price-list');
+        const now = new Date();
+        const targetDate = new Date();
+        if (selectedDay === 'tomorrow') targetDate.setDate(targetDate.getDate() + 1);
+
+        const filtered = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
+        
+        if (filtered.length === 0) {
+            listDiv.innerHTML = '<div style="padding:20px; text-align:center;">Rītdienas dati būs pieejami pēc plkst. 15:00</div>';
+            return;
+        }
+
+        listDiv.innerHTML = filtered.map(p => {
+            const hourDate = new Date(p.time);
+            const isCurrent = hourDate.getHours() === now.getHours() && selectedDay === 'today';
+            return `
+                <div class="row ${isCurrent ? 'current' : ''}">
+                    <span class="row-time">${hourDate.getHours()}:00</span>
+                    <span class="row-price" style="background: ${p.color}20; color: ${p.color}">${p.price}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function checkNotification(current) {
+        if (current.color.includes('22c55e') && Notification.permission === "granted") {
+            new Notification("Elektrības Luksofors", {
+                body: `Sākusies ZAĻĀ stunda! Cena tikai ${current.price} c/kWh. Laiks darbināt ierīces!`,
+                icon: "https://cdn-icons-png.flaticon.com/512/2950/2950558.png"
+            });
         }
     }
+
     init();
 </script>
 </body>
