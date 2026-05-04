@@ -1,22 +1,10 @@
 {
-  "updatedAt": "2026-05-04T21:02:05.520Z",
+  "updatedAt": "2026-05-04T21:52:40.182Z",
   "items": [
     {
       "store": "Rimi",
-      "name": "Gurķi īsie, kg",
-      "price": "3.99 € per kg 3 99 €/kg",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Tomāti ķekaros 2. šķira kg",
-      "price": "3.79 € per kg 3 79 €/kg",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Cukini zaļi 325-375g/gab kg",
-      "price": "2.89 € per kg 2 89 €/kg",
+      "name": "Apelsīni Powell C/0-1, 1. šķ. Rimi",
+      "price": "1.49 € per kg 1 49 €/kg",
       "category": "Pārtika"
     },
     {
@@ -27,8 +15,20 @@
     },
     {
       "store": "Rimi",
+      "name": "Kāposti jaunie kg",
+      "price": "0.99 € per kg 0 99 €/kg",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Cāļu krūtiņas filejas Rimi kg",
-      "price": "7.99 € per kg 7 99 €/kg",
+      "price": "6.39 € per kg 6 39 €/kg",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Avokado, gab",
+      "price": "0.49 € per gab. 0 49 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -39,26 +39,26 @@
     },
     {
       "store": "Rimi",
-      "name": "Vīnogas gaišās b/k Ivory 1.šk. kg",
-      "price": "4.99 € per kg 4 99 €/kg",
+      "name": "Brokoļi RIMI 350 g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Avokado Nogatavināti Rimi (4gab) 500g",
-      "price": "3.99 € per gab. 3 99 €/gab.",
+      "name": "Mellenes Rimi, 400g",
+      "price": "4.99 € per gab. 4 99 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Redīsi sarkanie 500G",
+      "price": "0.99 € per gab. 0 99 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
       "name": "Biezpiena sieriņš Kārums vaniļas 45g",
       "price": "0.47 € per gab. 0 47 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Banāni Cavendish 18+cm I Love Eco, 1 kg",
-      "price": "2.49 € per kg 2 49 €/kg",
       "category": "Pārtika"
     },
     {
@@ -75,14 +75,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Paprika Rimi saldā koniskā 170g",
-      "price": "1.39 € per gab. 1 39 €/gab.",
+      "name": "Tomātu mērce Spilva 510g",
+      "price": "1.55 € per gab. 1 55 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Tomātu mērce Spilva 510g",
-      "price": "1.55 € per gab. 1 55 €/gab.",
+      "name": "Kartupeļi Rimi gardēžu 900g",
+      "price": "1.59 € per gab. 1 59 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -99,20 +99,32 @@
     },
     {
       "store": "Rimi",
+      "name": "Seleriju kāti Rimi 450g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Sviests Exporta 82,5% 200g",
       "price": "1.79 € per gab. 1 79 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Redīsi buntē 100g",
-      "price": "0.79 € per gab. 0 79 €/gab.",
+      "name": "Āboli Royal Gala 75-80 mm, 1.šķira, kg",
+      "price": "2.29 € per kg 2 29 €/kg",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
       "name": "Piens Tere 2,5% 1,5l",
       "price": "1.19 € per gab. 1 19 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Sparģeļi zaļie 250g",
+      "price": "1.99 € per gab. 1 99 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -165,6 +177,12 @@
     },
     {
       "store": "Rimi",
+      "name": "Šampinjoni Rimi 250g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Kartupeļi frī Rimi rievoti saldēti 1kg",
       "price": "3.39 € per gab. 3 39 €/gab.",
       "category": "Pārtika"
@@ -195,6 +213,18 @@
     },
     {
       "store": "Rimi",
+      "name": "Salāti lapu Latvijas gab. 1.šķ.",
+      "price": "0.99 € per gab. 0 99 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Provansas salāti Rimi 1.šķira 150g",
+      "price": "1.39 € per gab. 1 39 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Biezpiena sieriņš Kārums šokolādes 45g",
       "price": "0.47 € per gab. 0 47 €/gab.",
       "category": "Pārtika"
@@ -209,36 +239,6 @@
       "store": "Rimi",
       "name": "Vājpiena biezpiens Valmiera 0,5% 180g",
       "price": "1.09 € per gab. 1 09 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Kivi nogatavināts 1. šķ. 4 gab, 1 iepak.",
-      "price": "3.49 € per gab. 3 49 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Cepumi Selga 180g",
-      "price": "1.29 € per gab. 1 29 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Ķirši Rimi bez kauliņiem saldēti 400g",
-      "price": "3.89 € per gab. 3 89 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Kviešu milti Ekstra 2kg",
-      "price": "2.29 € per gab. 2 29 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Sald. Rūjienas šok. ar brūkleņu p. 110ml/65g",
-      "price": "0.79 € per gab. 0 79 €/gab.",
       "category": "Pārtika"
     }
   ]
