@@ -3,168 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektrības Luksofors SMART</title>
+    <title>Akciju Navigators</title>
     <style>
-        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f1f5f9; --primary: #2563eb; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #1e293b; }
-        .container { max-width: 900px; margin: 0 auto; }
-        
-        .header-card { background: white; border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 15px; border-top: 8px solid #cbd5e1; }
-        .price-now { font-size: 42px; font-weight: 900; margin: 5px 0; }
-        .unit { font-size: 16px; color: #64748b; font-weight: 400; }
-        
-        .summary-mini { display: flex; justify-content: center; gap: 15px; margin-top: 10px; font-size: 13px; font-weight: bold; }
-        
-        .days-wrapper { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 768px) { .days-wrapper { grid-template-columns: 1fr 1fr; } }
-
-        .day-section { background: white; border-radius: 20px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .day-title { font-size: 16px; font-weight: 800; margin-bottom: 15px; text-align: center; color: #475569; text-transform: uppercase; }
-
-        .grid-24 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        
-        .hour-box { border-radius: 12px; padding: 10px 5px; text-align: center; position: relative; border: 2px solid transparent; transition: 0.2s; cursor: pointer; }
-        .hour-box:hover { border-color: #cbd5e1; transform: scale(1.02); }
-        .hour-time { font-size: 11px; font-weight: bold; color: rgba(0,0,0,0.5); display: block; }
-        .hour-price { font-size: 15px; font-weight: 800; display: block; margin: 2px 0; }
-        
-        /* Tooltip stils */
-        .tooltip { visibility: hidden; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #1e293b; color: white; padding: 10px; border-radius: 8px; width: 120px; z-index: 100; box-shadow: 0 10px 15px rgba(0,0,0,0.2); font-size: 11px; opacity: 0; transition: 0.2s; pointer-events: none; }
-        .hour-box:hover .tooltip { visibility: visible; opacity: 1; bottom: 120%; }
-        .tooltip::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #1e293b transparent transparent transparent; }
-        .tooltip-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
-        .tooltip-row:last-child { margin-bottom: 0; }
-
-        .intervals { display: flex; justify-content: center; gap: 2px; margin-top: 4px; }
-        .int-dot { width: 6px; height: 3px; border-radius: 1px; }
-
-        .hour-box.current { border-color: var(--primary); background: #fff !important; box-shadow: 0 0 10px rgba(37, 99, 235, 0.2); }
-
-        .notify-bar { background: #334155; color: white; padding: 12px; border-radius: 12px; font-size: 13px; text-align: center; cursor: pointer; margin-bottom: 15px; font-weight: bold; }
-        .vat-box { text-align: center; font-size: 12px; margin-bottom: 10px; color: #64748b; }
+        body { font-family: -apple-system, sans-serif; background: #f1f5f9; margin: 0; padding: 15px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .search-box { position: sticky; top: 10px; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 100; margin-bottom: 20px; }
+        input { width: 100%; border: none; font-size: 18px; outline: none; }
+        .card { background: white; border-radius: 15px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; border-left: 6px solid #ddd; }
+        .Rimi { border-color: #e30613; } .Maxima { border-color: #004a99; } .Lidl { border-color: #0050aa; }
+        .store { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #64748b; }
+        .name { font-weight: 600; color: #1e293b; display: block; }
+        .price { font-size: 20px; font-weight: 900; color: #000; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <div class="header-card" id="main-card">
-        <div id="status-text" style="font-size: 12px; font-weight: 800; letter-spacing: 1px;">IELĀDĒ...</div>
-        <div class="price-now"><span id="price-now">--.--</span><span class="unit">c/kWh</span></div>
-        <div class="summary-mini">
-            <span style="color: var(--green)">Min: <span id="min-p">--</span></span>
-            <span style="color: var(--red)">Max: <span id="max-p">--</span></span>
-        </div>
+    <div class="search-box">
+        <input type="text" id="q" placeholder="Ko meklējat? (piem. kafija)" oninput="draw()">
     </div>
-
-    <div class="vat-box">
-        <label><input type="checkbox" id="vat-checkbox" onchange="toggleVAT()"> Ar PVN (21%)</label>
-    </div>
-
-    <div class="notify-bar" onclick="requestNotifications()">🔔 Ieslēgt brīdinājumus par lēto laiku</div>
-
-    <div class="days-wrapper">
-        <div class="day-section">
-            <div class="day-title">Šodien</div>
-            <div class="grid-24" id="grid-today"></div>
-        </div>
-        <div class="day-section">
-            <div class="day-title">Rītdiena</div>
-            <div class="grid-24" id="grid-tomorrow"></div>
-        </div>
-    </div>
-    
-    <p id="update-info" style="text-align:center; font-size:10px; color:#94a3b8; margin-top:20px;"></p>
+    <div id="list"></div>
 </div>
-
 <script>
-    let allData = null;
-    let showVAT = false;
-
-    async function requestNotifications() {
-        const p = await Notification.requestPermission();
-        if (p === "granted") alert("Paziņojumi ieslēgti!");
-    }
-
-    function toggleVAT() {
-        showVAT = document.getElementById('vat-checkbox').checked;
-        updateUI();
-    }
-
+    let db = [];
     async function init() {
-        try {
-            const r = await fetch('data.json?v=' + Date.now());
-            allData = await r.json();
-            updateUI();
-            setInterval(updateUI, 60000);
-        } catch (e) { document.getElementById('status-text').innerText = "KĻŪDA DATU IELĀDĒ"; }
+        const r = await fetch('data.json?v=' + Date.now());
+        const d = await r.json();
+        db = d.items;
+        draw();
     }
-
-    function getP(v) { return (showVAT ? v * 1.21 : v).toFixed(2); }
-
-    function updateUI() {
-        if (!allData) return;
-        const now = new Date();
-        const currentData = allData.prices.find(p => {
-            const t = new Date(p.time);
-            return now.getTime() >= t.getTime() && now.getTime() < t.getTime() + 15*60*1000;
-        }) || allData.prices[0];
-
-        document.getElementById('price-now').innerText = getP(currentData.price);
-        document.getElementById('main-card').style.borderColor = currentData.color;
-        document.getElementById('status-text').innerText = currentData.label + " CENA";
-        document.getElementById('status-text').style.color = currentData.color;
-
-        const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === now.getDate());
-        if (todayPrices.length) {
-            document.getElementById('min-p').innerText = getP(Math.min(...todayPrices.map(p => p.price)));
-            document.getElementById('max-p').innerText = getP(Math.max(...todayPrices.map(p => p.price)));
-        }
-
-        renderGrid('grid-today', 0);
-        renderGrid('grid-tomorrow', 1);
-        document.getElementById('update-info').innerText = "ATJAUNOTS: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
+    function draw() {
+        const q = document.getElementById('q').value.toLowerCase();
+        document.getElementById('list').innerHTML = db.filter(i => i.name.toLowerCase().includes(q) || i.store.toLowerCase().includes(q))
+            .map(i => `<div class="card ${i.store}"><div><span class="store">${i.store}</span><span class="name">${i.name}</span></div><div class="price">${i.price}€</div></div>`).join('');
     }
-
-    function renderGrid(containerId, dayOffset) {
-        const grid = document.getElementById(containerId);
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + dayOffset);
-        
-        const dayData = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
-        if (!dayData.length) {
-            grid.innerHTML = '<div style="grid-column: span 4; font-size: 11px; color: #94a3b8; text-align: center; padding: 20px;">Rītdienas dati ap 15:30</div>';
-            return;
-        }
-
-        let html = '';
-        for (let h = 0; h < 24; h++) {
-            const hourIntervals = dayData.filter(p => new Date(p.time).getHours() === h);
-            if (!hourIntervals.length) continue;
-            
-            const avgPrice = hourIntervals.reduce((a,b) => a + b.price, 0) / hourIntervals.length;
-            const mainColor = hourIntervals[0].color;
-            const isNow = dayOffset === 0 && h === new Date().getHours();
-
-            // Uzģenerējam tooltip saturu
-            const tooltipContent = hourIntervals.map(int => {
-                const m = new Date(int.time).getMinutes().toString().padStart(2, '0');
-                return `<div class="tooltip-row"><span>:${m}</span> <b style="color:${int.color}">${getP(int.price)}</b></div>`;
-            }).join('');
-
-            html += `
-                <div class="hour-box ${isNow ? 'current' : ''}" style="background: ${mainColor}15">
-                    <span class="hour-time">${h}:00</span>
-                    <span class="hour-price" style="color: ${mainColor}">${getP(avgPrice)}</span>
-                    <div class="intervals">
-                        ${hourIntervals.map(int => `<div class="int-dot" style="background: ${int.color}"></div>`).join('')}
-                    </div>
-                    <div class="tooltip">${tooltipContent}</div>
-                </div>
-            `;
-        }
-        grid.innerHTML = html;
-    }
-
     init();
 </script>
 </body>
