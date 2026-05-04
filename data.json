@@ -1,197 +1,1218 @@
 {
-  "updatedAt": "2026-05-04T19:09:40.794Z",
-  "stations": [
+  "updatedAt": "2026-05-04T19:20:55.717Z",
+  "average": "9.45",
+  "prices": [
     {
-      "network": "Circle K",
-      "type": "95miles",
-      "price": 1.814,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T19:30:00.000Z",
+      "price": "13.42",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "95miles",
-      "price": 1.814,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T19:45:00.000Z",
+      "price": "12.89",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "95miles",
-      "price": 1.814,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T20:00:00.000Z",
+      "price": "14.38",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "98miles+",
-      "price": 1.884,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T20:15:00.000Z",
+      "price": "13.80",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "98miles+",
-      "price": 1.884,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T20:30:00.000Z",
+      "price": "12.50",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "98miles+",
-      "price": 1.884,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T20:45:00.000Z",
+      "price": "11.86",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles",
-      "price": 1.954,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T21:00:00.000Z",
+      "price": "13.61",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles",
-      "price": 1.954,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T21:15:00.000Z",
+      "price": "12.15",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles",
-      "price": 1.954,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T21:30:00.000Z",
+      "price": "11.65",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles+",
-      "price": 2.084,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T21:45:00.000Z",
+      "price": "11.39",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles+",
-      "price": 2.084,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T22:00:00.000Z",
+      "price": "12.70",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "Dmiles+",
-      "price": 2.084,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T22:15:00.000Z",
+      "price": "12.00",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Circle K",
-      "type": "miles+ XTL",
-      "price": 2.49,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T22:30:00.000Z",
+      "price": "11.22",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Circle K",
-      "type": "miles+ XTL",
-      "price": 2.49,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T22:45:00.000Z",
+      "price": "11.00",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Circle K",
-      "type": "miles+ XTL",
-      "price": 2.49,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T23:00:00.000Z",
+      "price": "11.06",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Circle K",
-      "type": "Autogāze",
-      "price": 1.055,
-      "address": "Brīvības iela 176",
-      "lat": 56.9657,
-      "lon": 24.1356
+      "time": "2026-05-03T23:15:00.000Z",
+      "price": "10.92",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Circle K",
-      "type": "Autogāze",
-      "price": 1.055,
-      "address": "K. Ulmaņa gatve 110",
-      "lat": 56.9248,
-      "lon": 24.0305
+      "time": "2026-05-03T23:30:00.000Z",
+      "price": "10.81",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Circle K",
-      "type": "Autogāze",
-      "price": 1.055,
-      "address": "Duntes iela 13",
-      "lat": 56.9745,
-      "lon": 24.1221
+      "time": "2026-05-03T23:45:00.000Z",
+      "price": "10.43",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Virši",
-      "type": "DD",
-      "price": 1.867,
-      "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T00:00:00.000Z",
+      "price": "11.43",
+      "color": "#ef4444",
+      "label": "Dārga"
     },
     {
-      "network": "Virši",
-      "type": "95E",
-      "price": 1.797,
-      "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T00:15:00.000Z",
+      "price": "11.13",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Virši",
-      "type": "98E",
-      "price": 1.897,
-      "address": "Brīvības gatve 297, RĪga, LV-1006",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T00:30:00.000Z",
+      "price": "11.03",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Virši",
-      "type": "CNG",
-      "price": 1.774,
-      "address": "Visā Viršu tīklā",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T00:45:00.000Z",
+      "price": "10.85",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Virši",
-      "type": "LPG",
-      "price": 1.055,
-      "address": "Visā Viršu tīklā",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T01:00:00.000Z",
+      "price": "10.75",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     },
     {
-      "network": "Virši",
-      "type": "AdBLUE",
-      "price": 0.845,
-      "address": "Visā Viršu tīklā",
-      "lat": 56.9622,
-      "lon": 24.1205
+      "time": "2026-05-04T01:15:00.000Z",
+      "price": "10.60",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T01:30:00.000Z",
+      "price": "10.61",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T01:45:00.000Z",
+      "price": "10.77",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T02:00:00.000Z",
+      "price": "10.75",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T02:15:00.000Z",
+      "price": "10.92",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T02:30:00.000Z",
+      "price": "11.16",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T02:45:00.000Z",
+      "price": "11.35",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T03:00:00.000Z",
+      "price": "11.05",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T03:15:00.000Z",
+      "price": "11.82",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T03:30:00.000Z",
+      "price": "13.18",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T03:45:00.000Z",
+      "price": "14.66",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T04:00:00.000Z",
+      "price": "13.95",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T04:15:00.000Z",
+      "price": "15.10",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T04:30:00.000Z",
+      "price": "14.92",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T04:45:00.000Z",
+      "price": "14.68",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T05:00:00.000Z",
+      "price": "14.46",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T05:15:00.000Z",
+      "price": "9.45",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T05:30:00.000Z",
+      "price": "10.00",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T05:45:00.000Z",
+      "price": "9.45",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T06:00:00.000Z",
+      "price": "11.69",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T06:15:00.000Z",
+      "price": "11.49",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T06:30:00.000Z",
+      "price": "11.07",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T06:45:00.000Z",
+      "price": "8.59",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T07:00:00.000Z",
+      "price": "10.56",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T07:15:00.000Z",
+      "price": "8.21",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T07:30:00.000Z",
+      "price": "6.93",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T07:45:00.000Z",
+      "price": "4.74",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T08:00:00.000Z",
+      "price": "6.72",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T08:15:00.000Z",
+      "price": "4.96",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T08:30:00.000Z",
+      "price": "4.81",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T08:45:00.000Z",
+      "price": "4.23",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T09:00:00.000Z",
+      "price": "5.51",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T09:15:00.000Z",
+      "price": "4.63",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T09:30:00.000Z",
+      "price": "6.33",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T09:45:00.000Z",
+      "price": "5.30",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T10:00:00.000Z",
+      "price": "8.00",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T10:15:00.000Z",
+      "price": "5.61",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T10:30:00.000Z",
+      "price": "4.13",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T10:45:00.000Z",
+      "price": "3.26",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T11:00:00.000Z",
+      "price": "4.75",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T11:15:00.000Z",
+      "price": "4.20",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T11:30:00.000Z",
+      "price": "3.35",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T11:45:00.000Z",
+      "price": "3.13",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T12:00:00.000Z",
+      "price": "4.17",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T12:15:00.000Z",
+      "price": "3.66",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T12:30:00.000Z",
+      "price": "3.57",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T12:45:00.000Z",
+      "price": "3.78",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T13:00:00.000Z",
+      "price": "3.55",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T13:15:00.000Z",
+      "price": "4.11",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T13:30:00.000Z",
+      "price": "3.64",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T13:45:00.000Z",
+      "price": "4.08",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T14:00:00.000Z",
+      "price": "2.69",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T14:15:00.000Z",
+      "price": "3.37",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T14:30:00.000Z",
+      "price": "4.13",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T14:45:00.000Z",
+      "price": "5.22",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T15:00:00.000Z",
+      "price": "3.50",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T15:15:00.000Z",
+      "price": "4.52",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T15:30:00.000Z",
+      "price": "6.21",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T15:45:00.000Z",
+      "price": "9.07",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T16:00:00.000Z",
+      "price": "6.00",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T16:15:00.000Z",
+      "price": "6.57",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T16:30:00.000Z",
+      "price": "11.59",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T16:45:00.000Z",
+      "price": "12.66",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T17:00:00.000Z",
+      "price": "11.95",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T17:15:00.000Z",
+      "price": "13.17",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T17:30:00.000Z",
+      "price": "13.70",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T17:45:00.000Z",
+      "price": "14.58",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T18:00:00.000Z",
+      "price": "13.32",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T18:15:00.000Z",
+      "price": "13.78",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T18:30:00.000Z",
+      "price": "14.16",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T18:45:00.000Z",
+      "price": "14.76",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T19:00:00.000Z",
+      "price": "14.13",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T19:15:00.000Z",
+      "price": "14.29",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T19:30:00.000Z",
+      "price": "14.45",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T19:45:00.000Z",
+      "price": "13.99",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T20:00:00.000Z",
+      "price": "13.33",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T20:15:00.000Z",
+      "price": "13.66",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T20:30:00.000Z",
+      "price": "13.86",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T20:45:00.000Z",
+      "price": "13.60",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T21:00:00.000Z",
+      "price": "13.55",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T21:15:00.000Z",
+      "price": "13.61",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T21:30:00.000Z",
+      "price": "13.08",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T21:45:00.000Z",
+      "price": "12.44",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-04T22:00:00.000Z",
+      "price": "7.77",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-04T22:15:00.000Z",
+      "price": "4.84",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T22:30:00.000Z",
+      "price": "3.51",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T22:45:00.000Z",
+      "price": "3.04",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T23:00:00.000Z",
+      "price": "3.69",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T23:15:00.000Z",
+      "price": "3.50",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T23:30:00.000Z",
+      "price": "3.09",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-04T23:45:00.000Z",
+      "price": "2.70",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T00:00:00.000Z",
+      "price": "3.50",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T00:15:00.000Z",
+      "price": "3.65",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T00:30:00.000Z",
+      "price": "3.49",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T00:45:00.000Z",
+      "price": "3.80",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T01:00:00.000Z",
+      "price": "3.60",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T01:15:00.000Z",
+      "price": "4.06",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T01:30:00.000Z",
+      "price": "6.48",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T01:45:00.000Z",
+      "price": "8.24",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T02:00:00.000Z",
+      "price": "5.83",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T02:15:00.000Z",
+      "price": "10.00",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T02:30:00.000Z",
+      "price": "11.93",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T02:45:00.000Z",
+      "price": "12.40",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T03:00:00.000Z",
+      "price": "11.90",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T03:15:00.000Z",
+      "price": "12.22",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T03:30:00.000Z",
+      "price": "13.03",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T03:45:00.000Z",
+      "price": "12.69",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T04:00:00.000Z",
+      "price": "13.96",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T04:15:00.000Z",
+      "price": "14.11",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T04:30:00.000Z",
+      "price": "14.26",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T04:45:00.000Z",
+      "price": "14.39",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T05:00:00.000Z",
+      "price": "17.05",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T05:15:00.000Z",
+      "price": "15.74",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T05:30:00.000Z",
+      "price": "14.37",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T05:45:00.000Z",
+      "price": "9.96",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T06:00:00.000Z",
+      "price": "15.35",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T06:15:00.000Z",
+      "price": "6.35",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T06:30:00.000Z",
+      "price": "5.00",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T06:45:00.000Z",
+      "price": "5.22",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T07:00:00.000Z",
+      "price": "5.63",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T07:15:00.000Z",
+      "price": "4.93",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T07:30:00.000Z",
+      "price": "4.01",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T07:45:00.000Z",
+      "price": "3.80",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T08:00:00.000Z",
+      "price": "4.06",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T08:15:00.000Z",
+      "price": "3.56",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T08:30:00.000Z",
+      "price": "3.02",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T08:45:00.000Z",
+      "price": "2.67",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T09:00:00.000Z",
+      "price": "3.66",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T09:15:00.000Z",
+      "price": "3.42",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T09:30:00.000Z",
+      "price": "3.74",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T09:45:00.000Z",
+      "price": "3.50",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T10:00:00.000Z",
+      "price": "4.03",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T10:15:00.000Z",
+      "price": "3.71",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T10:30:00.000Z",
+      "price": "3.56",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T10:45:00.000Z",
+      "price": "3.56",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T11:00:00.000Z",
+      "price": "3.25",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T11:15:00.000Z",
+      "price": "3.45",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T11:30:00.000Z",
+      "price": "3.29",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T11:45:00.000Z",
+      "price": "3.19",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T12:00:00.000Z",
+      "price": "3.20",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T12:15:00.000Z",
+      "price": "3.47",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T12:30:00.000Z",
+      "price": "4.54",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T12:45:00.000Z",
+      "price": "6.00",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T13:00:00.000Z",
+      "price": "6.92",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T13:15:00.000Z",
+      "price": "6.05",
+      "color": "#22c55e",
+      "label": "Lēta"
+    },
+    {
+      "time": "2026-05-05T13:30:00.000Z",
+      "price": "9.07",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T13:45:00.000Z",
+      "price": "10.22",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T14:00:00.000Z",
+      "price": "8.59",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T14:15:00.000Z",
+      "price": "10.01",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T14:30:00.000Z",
+      "price": "10.96",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T14:45:00.000Z",
+      "price": "12.24",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T15:00:00.000Z",
+      "price": "11.82",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T15:15:00.000Z",
+      "price": "12.48",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T15:30:00.000Z",
+      "price": "13.46",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T15:45:00.000Z",
+      "price": "14.65",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T16:00:00.000Z",
+      "price": "13.49",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T16:15:00.000Z",
+      "price": "13.40",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T16:30:00.000Z",
+      "price": "14.97",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T16:45:00.000Z",
+      "price": "17.58",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T17:00:00.000Z",
+      "price": "15.44",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T17:15:00.000Z",
+      "price": "16.30",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T17:30:00.000Z",
+      "price": "16.40",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T17:45:00.000Z",
+      "price": "18.72",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T18:00:00.000Z",
+      "price": "16.64",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T18:15:00.000Z",
+      "price": "17.07",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T18:30:00.000Z",
+      "price": "16.50",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T18:45:00.000Z",
+      "price": "15.86",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T19:00:00.000Z",
+      "price": "16.01",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T19:15:00.000Z",
+      "price": "15.48",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T19:30:00.000Z",
+      "price": "14.88",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T19:45:00.000Z",
+      "price": "13.56",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T20:00:00.000Z",
+      "price": "14.81",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T20:15:00.000Z",
+      "price": "13.74",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T20:30:00.000Z",
+      "price": "13.07",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T20:45:00.000Z",
+      "price": "12.09",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T21:00:00.000Z",
+      "price": "12.79",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T21:15:00.000Z",
+      "price": "11.81",
+      "color": "#ef4444",
+      "label": "Dārga"
+    },
+    {
+      "time": "2026-05-05T21:30:00.000Z",
+      "price": "11.16",
+      "color": "#fbbf24",
+      "label": "Vidēja"
+    },
+    {
+      "time": "2026-05-05T21:45:00.000Z",
+      "price": "10.54",
+      "color": "#fbbf24",
+      "label": "Vidēja"
     }
   ]
 }
