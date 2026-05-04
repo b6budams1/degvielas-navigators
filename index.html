@@ -3,73 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektrības Luksofors PRO</title>
+    <title>Elektrības Luksofors COMPACT</title>
     <style>
-        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f8fafc; --primary: #2563eb; }
-        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; line-height: 1.5; }
-        .container { max-width: 500px; margin: 0 auto; }
+        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f1f5f9; --primary: #2563eb; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #1e293b; }
+        .container { max-width: 900px; margin: 0 auto; }
         
-        .main-status { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 10px solid #e2e8f0; transition: border-color 0.5s ease; }
-        .price-now { font-size: 56px; font-weight: 900; margin: 10px 0; letter-spacing: -2px; }
-        .unit { font-size: 18px; color: #64748b; font-weight: 400; letter-spacing: 0; margin-left: 5px; }
+        .header-card { background: white; border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 15px; border-top: 8px solid #cbd5e1; }
+        .price-now { font-size: 42px; font-weight: 900; margin: 5px 0; }
+        .unit { font-size: 16px; color: #64748b; font-weight: 400; }
         
-        .nav-tabs { display: flex; gap: 8px; margin-bottom: 15px; background: #e2e8f0; padding: 4px; border-radius: 14px; }
-        .tab-btn { flex: 1; padding: 10px; border: none; background: transparent; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; color: #64748b; }
-        .tab-btn.active { background: white; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-
-        .price-list { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #f1f5f9; }
-        .row.current { background: #f0f7ff; border-left: 5px solid var(--primary); }
-        .row-time { font-weight: 600; width: 70px; font-variant-numeric: tabular-nums; }
-        .row-price { font-weight: 800; padding: 6px 14px; border-radius: 10px; min-width: 70px; text-align: center; font-variant-numeric: tabular-nums; }
-
-        .notify-btn { width: 100%; padding: 15px; border: none; border-radius: 16px; background: #334155; color: white; font-weight: bold; margin-bottom: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; }
+        .summary-mini { display: flex; justify-content: center; gap: 15px; margin-top: 10px; font-size: 13px; font-weight: bold; }
         
-        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .summary-item { background: white; padding: 15px; border-radius: 18px; text-align: center; font-size: 13px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .summary-val { display: block; font-size: 20px; font-weight: 800; margin-top: 5px; }
+        .days-wrapper { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .days-wrapper { grid-template-columns: 1fr 1fr; } }
 
-        .vat-toggle { text-align: center; font-size: 12px; color: #64748b; margin-bottom: 15px; }
+        .day-section { background: white; border-radius: 20px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .day-title { font-size: 16px; font-weight: 800; margin-bottom: 15px; text-align: center; color: #475569; text-transform: uppercase; }
+
+        .grid-24 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        
+        .hour-box { border-radius: 12px; padding: 10px 5px; text-align: center; position: relative; border: 2px solid transparent; transition: 0.2s; }
+        .hour-time { font-size: 11px; font-weight: bold; color: rgba(0,0,0,0.5); display: block; }
+        .hour-price { font-size: 15px; font-weight: 800; display: block; margin: 2px 0; }
+        
+        /* 15 min indikatori */
+        .intervals { display: flex; justify-content: center; gap: 2px; margin-top: 4px; }
+        .int-dot { width: 6px; height: 3px; border-radius: 1px; }
+
+        .hour-box.current { border-color: var(--primary); background: #fff !important; box-shadow: 0 0 10px rgba(37, 99, 235, 0.2); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+
+        .notify-bar { background: #334155; color: white; padding: 12px; border-radius: 12px; font-size: 13px; text-align: center; cursor: pointer; margin-bottom: 15px; font-weight: bold; }
+        .vat-box { text-align: center; font-size: 12px; margin-bottom: 10px; color: #64748b; }
     </style>
 </head>
 <body>
+
 <div class="container">
-    <div class="main-status" id="main-card">
-        <div id="status-label" style="font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: 1px;">Analizējam...</div>
-        <div class="price-now" id="price-now">--.--<span class="unit">c/kWh</span></div>
-        <div id="advice-text" style="font-weight: 600; color: #475569; font-size: 17px;">Lūdzu, uzgaidiet...</div>
+    <div class="header-card" id="main-card">
+        <div id="status-text" style="font-size: 12px; font-weight: 800; letter-spacing: 1px;">IELĀDĒ...</div>
+        <div class="price-now"><span id="price-now">--.--</span><span class="unit">c/kWh</span></div>
+        <div class="summary-mini">
+            <span style="color: var(--green)">Min: <span id="min-p">--</span></span>
+            <span style="color: var(--red)">Max: <span id="max-p">--</span></span>
+        </div>
     </div>
 
-    <button class="notify-btn" onclick="requestNotifications()">
-        🔔 Saņemt brīdinājumu par lēto laiku
-    </button>
-
-    <div class="summary-grid">
-        <div class="summary-item">Zemākā šodien <span class="summary-val" id="min-price" style="color: var(--green)">--.--</span></div>
-        <div class="summary-item">Augstākā šodien <span class="summary-val" id="max-price" style="color: var(--red)">--.--</span></div>
+    <div class="vat-box">
+        <label><input type="checkbox" id="vat-checkbox" onchange="toggleVAT()"> Ar PVN (21%)</label>
     </div>
 
-    <div class="vat-toggle">
-        <label><input type="checkbox" id="vat-checkbox" onchange="toggleVAT()"> rādīt cenu ar PVN (21%)</label>
-    </div>
+    <div class="notify-bar" onclick="requestNotifications()">🔔 Ieslēgt brīdinājumus par lēto laiku</div>
 
-    <div class="nav-tabs">
-        <button class="tab-btn active" id="tab-today" onclick="switchDay('today')">Šodien</button>
-        <button class="tab-btn" id="tab-tomorrow" onclick="switchDay('tomorrow')">Rītdiena</button>
+    <div class="days-wrapper">
+        <div class="day-section">
+            <div class="day-title">Šodien</div>
+            <div class="grid-24" id="grid-today"></div>
+        </div>
+        <div class="day-section">
+            <div class="day-title">Rītdiena</div>
+            <div class="grid-24" id="grid-tomorrow"></div>
+        </div>
     </div>
-
-    <div class="price-list" id="price-list"></div>
-    <p id="update-info" style="text-align:center; font-size:11px; color:#94a3b8; margin-top:20px;"></p>
+    
+    <p id="update-info" style="text-align:center; font-size:10px; color:#94a3b8; margin-top:20px;"></p>
 </div>
 
 <script>
     let allData = null;
-    let selectedDay = 'today';
     let showVAT = false;
 
     async function requestNotifications() {
-        const permission = await Notification.requestPermission();
-        if (permission === "granted") alert("Paziņojumi ieslēgti! Informēsim par izdevīgām stundām.");
+        const p = await Notification.requestPermission();
+        if (p === "granted") alert("Paziņojumi ieslēgti!");
     }
 
     function toggleVAT() {
@@ -77,94 +84,74 @@
         updateUI();
     }
 
-    function switchDay(day) {
-        selectedDay = day;
-        document.getElementById('tab-today').classList.toggle('active', day === 'today');
-        document.getElementById('tab-tomorrow').classList.toggle('active', day === 'tomorrow');
-        renderList();
-    }
-
     async function init() {
         try {
-            const res = await fetch('data.json?v=' + Date.now());
-            allData = await res.json();
+            const r = await fetch('data.json?v=' + Date.now());
+            allData = await r.json();
             updateUI();
-            setInterval(updateUI, 60000); // Atjaunot katru minūti
-        } catch (e) { 
-            console.error(e);
-            document.getElementById('advice-text').innerText = "Kļūda ielādējot datus.";
-        }
+            setInterval(updateUI, 60000);
+        } catch (e) { document.getElementById('status-text').innerText = "KĻŪDA DATU IELĀDĒ"; }
     }
 
-    function getDisplayPrice(price) {
-        const val = showVAT ? price * 1.21 : price;
-        return val.toFixed(2);
-    }
+    function getP(v) { return (showVAT ? v * 1.21 : v).toFixed(2); }
 
     function updateUI() {
         if (!allData) return;
-        
         const now = new Date();
-        // Atrodam pašreizējo 15 minūšu intervālu
-        const current = allData.prices.find(p => {
-            const pTime = new Date(p.time).getTime();
-            return now.getTime() >= pTime && now.getTime() < pTime + 15 * 60 * 1000;
+        const currentHour = now.getHours();
+        const currentData = allData.prices.find(p => {
+            const t = new Date(p.time);
+            return now.getTime() >= t.getTime() && now.getTime() < t.getTime() + 15*60*1000;
         }) || allData.prices[0];
 
-        // Galvenā informācija
-        document.getElementById('price-now').innerHTML = `${getDisplayPrice(current.price)}<span class="unit">c/kWh</span>`;
-        document.getElementById('main-card').style.borderTopColor = current.color;
-        document.getElementById('status-label').innerText = current.label + " CENA";
-        document.getElementById('status-label').style.color = current.color;
-        
-        let advice = "Vidējs patēriņš.";
-        if (current.color.includes('22c55e')) advice = "✨ Izdevīgs laiks lielajiem darbiem!";
-        if (current.color.includes('ef4444')) advice = "🛑 Dārgs laiks! Samazini patēriņu.";
-        document.getElementById('advice-text').innerText = advice;
+        document.getElementById('price-now').innerText = getP(currentData.price);
+        document.getElementById('main-card').style.borderColor = currentData.color;
+        document.getElementById('status-text').innerText = currentData.label + " CENA";
+        document.getElementById('status-text').style.color = currentData.color;
 
-        // Statistika (šodienai)
-        const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === new Date().getDate());
-        if (todayPrices.length > 0) {
-            const min = Math.min(...todayPrices.map(p => p.price));
-            const max = Math.max(...todayPrices.map(p => p.price));
-            document.getElementById('min-price').innerText = getDisplayPrice(min);
-            document.getElementById('max-price').innerText = getDisplayPrice(max);
+        const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === now.getDate());
+        if (todayPrices.length) {
+            document.getElementById('min-p').innerText = getP(Math.min(...todayPrices.map(p => p.price)));
+            document.getElementById('max-p').innerText = getP(Math.max(...todayPrices.map(p => p.price)));
         }
-        
-        document.getElementById('update-info').innerText = "Dati atjaunoti: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
-        renderList();
+
+        renderGrid('grid-today', 0);
+        renderGrid('grid-tomorrow', 1);
+        document.getElementById('update-info').innerText = "ATJAUNOTS: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
     }
 
-    function renderList() {
-        const listDiv = document.getElementById('price-list');
-        const now = new Date();
+    function renderGrid(containerId, dayOffset) {
+        const grid = document.getElementById(containerId);
         const targetDate = new Date();
-        if (selectedDay === 'tomorrow') targetDate.setDate(targetDate.getDate() + 1);
-
-        const filtered = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
+        targetDate.setDate(targetDate.getDate() + dayOffset);
         
-        if (filtered.length === 0) {
-            listDiv.innerHTML = `<div style="padding:40px; text-align:center; color:#64748b;">
-                <div style="font-size:30px; margin-bottom:10px;">⏳</div>
-                Rītdienas dati būs pieejami ap plkst. 15:30
-            </div>`;
+        const dayData = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
+        if (!dayData.length) {
+            grid.innerHTML = '<div style="grid-column: span 4; font-size: 11px; color: #94a3b8; text-align: center; padding: 20px;">Dati būs ap 15:30</div>';
             return;
         }
 
-        listDiv.innerHTML = filtered.map(p => {
-            const hourDate = new Date(p.time);
-            const isCurrent = (now.getTime() >= hourDate.getTime() && now.getTime() < hourDate.getTime() + 15 * 60 * 1000) && selectedDay === 'today';
+        let html = '';
+        for (let h = 0; h < 24; h++) {
+            const hourIntervals = dayData.filter(p => new Date(p.time).getHours() === h);
+            if (!hourIntervals.length) continue;
             
-            const timeStr = hourDate.getHours().toString().padStart(2, '0') + ":" + 
-                            hourDate.getMinutes().toString().padStart(2, '0');
+            // Vidējā stundas cena
+            const avgPrice = hourIntervals.reduce((a,b) => a + b.price, 0) / hourIntervals.length;
+            const mainColor = hourIntervals[0].color;
+            const isNow = dayOffset === 0 && h === new Date().getHours();
 
-            return `
-                <div class="row ${isCurrent ? 'current' : ''}">
-                    <span class="row-time">${timeStr}</span>
-                    <span class="row-price" style="background: ${p.color}15; color: ${p.color}">${getDisplayPrice(p.price)}</span>
+            html += `
+                <div class="hour-box ${isNow ? 'current' : ''}" style="background: ${mainColor}15">
+                    <span class="hour-time">${h}:00</span>
+                    <span class="hour-price" style="color: ${mainColor}">${getP(avgPrice)}</span>
+                    <div class="intervals">
+                        ${hourIntervals.map(int => `<div class="int-dot" style="background: ${int.color}"></div>`).join('')}
+                    </div>
                 </div>
             `;
-        }).join('');
+        }
+        grid.innerHTML = html;
     }
 
     init();
