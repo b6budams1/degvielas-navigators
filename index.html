@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektrības Luksofors COMPACT</title>
+    <title>Elektrības Luksofors SMART</title>
     <style>
         :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f1f5f9; --primary: #2563eb; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #1e293b; }
@@ -23,16 +23,22 @@
 
         .grid-24 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
         
-        .hour-box { border-radius: 12px; padding: 10px 5px; text-align: center; position: relative; border: 2px solid transparent; transition: 0.2s; }
+        .hour-box { border-radius: 12px; padding: 10px 5px; text-align: center; position: relative; border: 2px solid transparent; transition: 0.2s; cursor: pointer; }
+        .hour-box:hover { border-color: #cbd5e1; transform: scale(1.02); }
         .hour-time { font-size: 11px; font-weight: bold; color: rgba(0,0,0,0.5); display: block; }
         .hour-price { font-size: 15px; font-weight: 800; display: block; margin: 2px 0; }
         
-        /* 15 min indikatori */
+        /* Tooltip stils */
+        .tooltip { visibility: hidden; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); background: #1e293b; color: white; padding: 10px; border-radius: 8px; width: 120px; z-index: 100; box-shadow: 0 10px 15px rgba(0,0,0,0.2); font-size: 11px; opacity: 0; transition: 0.2s; pointer-events: none; }
+        .hour-box:hover .tooltip { visibility: visible; opacity: 1; bottom: 120%; }
+        .tooltip::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #1e293b transparent transparent transparent; }
+        .tooltip-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+        .tooltip-row:last-child { margin-bottom: 0; }
+
         .intervals { display: flex; justify-content: center; gap: 2px; margin-top: 4px; }
         .int-dot { width: 6px; height: 3px; border-radius: 1px; }
 
-        .hour-box.current { border-color: var(--primary); background: #fff !important; box-shadow: 0 0 10px rgba(37, 99, 235, 0.2); animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        .hour-box.current { border-color: var(--primary); background: #fff !important; box-shadow: 0 0 10px rgba(37, 99, 235, 0.2); }
 
         .notify-bar { background: #334155; color: white; padding: 12px; border-radius: 12px; font-size: 13px; text-align: center; cursor: pointer; margin-bottom: 15px; font-weight: bold; }
         .vat-box { text-align: center; font-size: 12px; margin-bottom: 10px; color: #64748b; }
@@ -98,7 +104,6 @@
     function updateUI() {
         if (!allData) return;
         const now = new Date();
-        const currentHour = now.getHours();
         const currentData = allData.prices.find(p => {
             const t = new Date(p.time);
             return now.getTime() >= t.getTime() && now.getTime() < t.getTime() + 15*60*1000;
@@ -127,7 +132,7 @@
         
         const dayData = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
         if (!dayData.length) {
-            grid.innerHTML = '<div style="grid-column: span 4; font-size: 11px; color: #94a3b8; text-align: center; padding: 20px;">Dati būs ap 15:30</div>';
+            grid.innerHTML = '<div style="grid-column: span 4; font-size: 11px; color: #94a3b8; text-align: center; padding: 20px;">Rītdienas dati ap 15:30</div>';
             return;
         }
 
@@ -136,10 +141,15 @@
             const hourIntervals = dayData.filter(p => new Date(p.time).getHours() === h);
             if (!hourIntervals.length) continue;
             
-            // Vidējā stundas cena
             const avgPrice = hourIntervals.reduce((a,b) => a + b.price, 0) / hourIntervals.length;
             const mainColor = hourIntervals[0].color;
             const isNow = dayOffset === 0 && h === new Date().getHours();
+
+            // Uzģenerējam tooltip saturu
+            const tooltipContent = hourIntervals.map(int => {
+                const m = new Date(int.time).getMinutes().toString().padStart(2, '0');
+                return `<div class="tooltip-row"><span>:${m}</span> <b style="color:${int.color}">${getP(int.price)}</b></div>`;
+            }).join('');
 
             html += `
                 <div class="hour-box ${isNow ? 'current' : ''}" style="background: ${mainColor}15">
@@ -148,6 +158,7 @@
                     <div class="intervals">
                         ${hourIntervals.map(int => `<div class="int-dot" style="background: ${int.color}"></div>`).join('')}
                     </div>
+                    <div class="tooltip">${tooltipContent}</div>
                 </div>
             `;
         }
