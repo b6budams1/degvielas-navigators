@@ -5,47 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elektrības Luksofors PRO</title>
     <style>
-        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f8fafc; }
-        body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; }
+        :root { --green: #22c55e; --yellow: #fbbf24; --red: #ef4444; --bg: #f8fafc; --primary: #2563eb; }
+        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; line-height: 1.5; }
         .container { max-width: 500px; margin: 0 auto; }
         
-        .main-status { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 10px solid #e2e8f0; }
-        .price-now { font-size: 56px; font-weight: 900; margin: 10px 0; }
-        .unit { font-size: 18px; color: #64748b; font-weight: 400; }
+        .main-status { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 10px solid #e2e8f0; transition: border-color 0.5s ease; }
+        .price-now { font-size: 56px; font-weight: 900; margin: 10px 0; letter-spacing: -2px; }
+        .unit { font-size: 18px; color: #64748b; font-weight: 400; letter-spacing: 0; margin-left: 5px; }
         
-        .nav-tabs { display: flex; gap: 10px; margin-bottom: 15px; }
-        .tab-btn { flex: 1; padding: 10px; border: none; background: #e2e8f0; border-radius: 12px; font-weight: bold; cursor: pointer; }
-        .tab-btn.active { background: #2563eb; color: white; }
+        .nav-tabs { display: flex; gap: 8px; margin-bottom: 15px; background: #e2e8f0; padding: 4px; border-radius: 14px; }
+        .tab-btn { flex: 1; padding: 10px; border: none; background: transparent; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; color: #64748b; }
+        .tab-btn.active { background: white; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 
         .price-list { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; border-bottom: 1px solid #f1f5f9; }
-        .row.current { background: #f1f5f9; border-left: 5px solid #2563eb; }
-        .row-time { font-weight: 600; width: 60px; }
-        .row-price { font-weight: 800; padding: 5px 12px; border-radius: 8px; min-width: 80px; text-align: center; }
+        .row.current { background: #f0f7ff; border-left: 5px solid var(--primary); }
+        .row-time { font-weight: 600; width: 70px; font-variant-numeric: tabular-nums; }
+        .row-price { font-weight: 800; padding: 6px 14px; border-radius: 10px; min-width: 70px; text-align: center; font-variant-numeric: tabular-nums; }
 
-        .notify-btn { width: 100%; padding: 15px; border: none; border-radius: 15px; background: #334155; color: white; font-weight: bold; margin-bottom: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .notify-btn:active { opacity: 0.8; }
+        .notify-btn { width: 100%; padding: 15px; border: none; border-radius: 16px; background: #334155; color: white; font-weight: bold; margin-bottom: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; }
         
         .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .summary-item { background: white; padding: 15px; border-radius: 15px; text-align: center; font-size: 13px; }
-        .summary-val { display: block; font-size: 18px; font-weight: bold; margin-top: 5px; }
+        .summary-item { background: white; padding: 15px; border-radius: 18px; text-align: center; font-size: 13px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .summary-val { display: block; font-size: 20px; font-weight: 800; margin-top: 5px; }
+
+        .vat-toggle { text-align: center; font-size: 12px; color: #64748b; margin-bottom: 15px; }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="main-status" id="main-card">
-        <div id="status-label" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">Ielādē...</div>
+        <div id="status-label" style="font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: 1px;">Analizējam...</div>
         <div class="price-now" id="price-now">--.--<span class="unit">c/kWh</span></div>
-        <div id="advice-text" style="font-weight: 600; color: #475569;">Lūdzu, uzgaidiet...</div>
+        <div id="advice-text" style="font-weight: 600; color: #475569; font-size: 17px;">Lūdzu, uzgaidiet...</div>
     </div>
 
     <button class="notify-btn" onclick="requestNotifications()">
-        🔔 Ieslēgt paziņojumus par lēto laiku
+        🔔 Saņemt brīdinājumu par lēto laiku
     </button>
 
     <div class="summary-grid">
         <div class="summary-item">Zemākā šodien <span class="summary-val" id="min-price" style="color: var(--green)">--.--</span></div>
         <div class="summary-item">Augstākā šodien <span class="summary-val" id="max-price" style="color: var(--red)">--.--</span></div>
+    </div>
+
+    <div class="vat-toggle">
+        <label><input type="checkbox" id="vat-checkbox" onchange="toggleVAT()"> rādīt cenu ar PVN (21%)</label>
     </div>
 
     <div class="nav-tabs">
@@ -60,10 +65,16 @@
 <script>
     let allData = null;
     let selectedDay = 'today';
+    let showVAT = false;
 
     async function requestNotifications() {
         const permission = await Notification.requestPermission();
-        if (permission === "granted") alert("Paziņojumi ieslēgti! Mēs Tevi informēsim par 'zaļajām' stundām.");
+        if (permission === "granted") alert("Paziņojumi ieslēgti! Informēsim par izdevīgām stundām.");
+    }
+
+    function toggleVAT() {
+        showVAT = document.getElementById('vat-checkbox').checked;
+        updateUI();
     }
 
     function switchDay(day) {
@@ -77,34 +88,51 @@
         try {
             const res = await fetch('data.json?v=' + Date.now());
             allData = await res.json();
-            
-            const now = new Date();
-            const currentHourStr = new Date(now.setMinutes(0,0,0)).toISOString();
-            const current = allData.prices.find(p => p.time === currentHourStr) || allData.prices[0];
+            updateUI();
+            setInterval(updateUI, 60000); // Atjaunot katru minūti
+        } catch (e) { 
+            console.error(e);
+            document.getElementById('advice-text').innerText = "Kļūda ielādējot datus.";
+        }
+    }
 
-            // Galvenā informācija
-            document.getElementById('price-now').innerHTML = `${current.price}<span class="unit">c/kWh</span>`;
-            document.getElementById('main-card').style.borderTopColor = current.color;
-            document.getElementById('status-label').innerText = current.label + " cena";
-            document.getElementById('status-label').style.color = current.color;
-            
-            let advice = "Vidējs patēriņš.";
-            if (current.color.includes('22c55e')) advice = "✨ Lielisks laiks lielajiem darbiem!";
-            if (current.color.includes('ef4444')) advice = "🛑 Tagad labāk neko neslēgt iekšā.";
-            document.getElementById('advice-text').innerText = advice;
+    function getDisplayPrice(price) {
+        const val = showVAT ? price * 1.21 : price;
+        return val.toFixed(2);
+    }
 
-            // Statistika
-            const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === new Date().getDate());
+    function updateUI() {
+        if (!allData) return;
+        
+        const now = new Date();
+        // Atrodam pašreizējo 15 minūšu intervālu
+        const current = allData.prices.find(p => {
+            const pTime = new Date(p.time).getTime();
+            return now.getTime() >= pTime && now.getTime() < pTime + 15 * 60 * 1000;
+        }) || allData.prices[0];
+
+        // Galvenā informācija
+        document.getElementById('price-now').innerHTML = `${getDisplayPrice(current.price)}<span class="unit">c/kWh</span>`;
+        document.getElementById('main-card').style.borderTopColor = current.color;
+        document.getElementById('status-label').innerText = current.label + " CENA";
+        document.getElementById('status-label').style.color = current.color;
+        
+        let advice = "Vidējs patēriņš.";
+        if (current.color.includes('22c55e')) advice = "✨ Izdevīgs laiks lielajiem darbiem!";
+        if (current.color.includes('ef4444')) advice = "🛑 Dārgs laiks! Samazini patēriņu.";
+        document.getElementById('advice-text').innerText = advice;
+
+        // Statistika (šodienai)
+        const todayPrices = allData.prices.filter(p => new Date(p.time).getDate() === new Date().getDate());
+        if (todayPrices.length > 0) {
             const min = Math.min(...todayPrices.map(p => p.price));
             const max = Math.max(...todayPrices.map(p => p.price));
-            document.getElementById('min-price').innerText = min.toFixed(2);
-            document.getElementById('max-price').innerText = max.toFixed(2);
-            document.getElementById('update-info').innerText = "Dati atjaunoti: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
-
-            renderList();
-            checkNotification(current);
-
-        } catch (e) { console.error(e); }
+            document.getElementById('min-price').innerText = getDisplayPrice(min);
+            document.getElementById('max-price').innerText = getDisplayPrice(max);
+        }
+        
+        document.getElementById('update-info').innerText = "Dati atjaunoti: " + new Date(allData.updatedAt).toLocaleString('lv-LV');
+        renderList();
     }
 
     function renderList() {
@@ -116,29 +144,27 @@
         const filtered = allData.prices.filter(p => new Date(p.time).getDate() === targetDate.getDate());
         
         if (filtered.length === 0) {
-            listDiv.innerHTML = '<div style="padding:20px; text-align:center;">Rītdienas dati būs pieejami pēc plkst. 15:00</div>';
+            listDiv.innerHTML = `<div style="padding:40px; text-align:center; color:#64748b;">
+                <div style="font-size:30px; margin-bottom:10px;">⏳</div>
+                Rītdienas dati būs pieejami ap plkst. 15:30
+            </div>`;
             return;
         }
 
         listDiv.innerHTML = filtered.map(p => {
             const hourDate = new Date(p.time);
-            const isCurrent = hourDate.getHours() === now.getHours() && selectedDay === 'today';
+            const isCurrent = (now.getTime() >= hourDate.getTime() && now.getTime() < hourDate.getTime() + 15 * 60 * 1000) && selectedDay === 'today';
+            
+            const timeStr = hourDate.getHours().toString().padStart(2, '0') + ":" + 
+                            hourDate.getMinutes().toString().padStart(2, '0');
+
             return `
                 <div class="row ${isCurrent ? 'current' : ''}">
-                    <span class="row-time">${hourDate.getHours()}:00</span>
-                    <span class="row-price" style="background: ${p.color}20; color: ${p.color}">${p.price}</span>
+                    <span class="row-time">${timeStr}</span>
+                    <span class="row-price" style="background: ${p.color}15; color: ${p.color}">${getDisplayPrice(p.price)}</span>
                 </div>
             `;
         }).join('');
-    }
-
-    function checkNotification(current) {
-        if (current.color.includes('22c55e') && Notification.permission === "granted") {
-            new Notification("Elektrības Luksofors", {
-                body: `Sākusies ZAĻĀ stunda! Cena tikai ${current.price} c/kWh. Laiks darbināt ierīces!`,
-                icon: "https://cdn-icons-png.flaticon.com/512/2950/2950558.png"
-            });
-        }
     }
 
     init();
