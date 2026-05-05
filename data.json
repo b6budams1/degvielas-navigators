@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-05-05T18:57:12.128Z",
+  "updatedAt": "2026-05-05T19:00:11.591Z",
   "items": [
     {
       "store": "Lidl",
-      "name": "Svaigas avenes",
+      "name": "Svaigas avenes \"Demo\"",
       "price": "1,79",
-      "unit": "125g (14,32 €/kg)",
+      "unit": "125g iepakojums (14,32 €/kg)",
       "img": "https://sc01.alicdn.com/kf/A76c9db96a2504dd0ac38c476b4309173X.png",
-      "date": "Līdz 10.05"
+      "date": "Akcija līdz 10.05"
     }
   ]
 }
