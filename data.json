@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-05-05T04:50:53.681Z",
+  "updatedAt": "2026-05-05T07:09:49.565Z",
   "items": [
+    {
+      "store": "Rimi",
+      "name": "Paprika sarkana 80+ mm 1. šķira kg",
+      "price": "2.49 € per kg 2 49 €/kg",
+      "category": "Pārtika"
+    },
     {
       "store": "Rimi",
       "name": "Apelsīni Powell C/0-1, 1. šķ. Rimi",
@@ -63,6 +69,12 @@
     },
     {
       "store": "Rimi",
+      "name": "Olas Balticovo brīv.vis.A/LM Nr.1 10gab.",
+      "price": "3.29 € per gab. 3 29 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Biezpiens Valmiera 5% 180g",
       "price": "1.15 € per gab. 1 15 €/gab.",
       "category": "Pārtika"
@@ -99,14 +111,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Sviests Exporta 82,5% 200g",
-      "price": "1.79 € per gab. 1 79 €/gab.",
+      "name": "Āboli Royal Gala 75-80 mm, 1.šķira, kg",
+      "price": "2.29 € per kg 2 29 €/kg",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Āboli Royal Gala 75-80 mm, 1.šķira, kg",
-      "price": "2.29 € per kg 2 29 €/kg",
+      "name": "Sviests Exporta 82,5% 200g",
+      "price": "1.79 € per gab. 1 79 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -227,18 +239,6 @@
       "store": "Rimi",
       "name": "Kefīra maize Lielmaize 500g",
       "price": "1.39 € per gab. 1 39 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Vājpiena biezpiens Valmiera 0,5% 180g",
-      "price": "1.09 € per gab. 1 09 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Kabači kg",
-      "price": "1.99 € per kg 1 99 €/kg",
       "category": "Pārtika"
     }
   ]
