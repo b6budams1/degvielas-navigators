@@ -1,4 +1,325 @@
 {
-  "updatedAt": "2026-05-05T16:46:12.376Z",
-  "items": []
+  "updatedAt": "2026-05-05T16:53:54.209Z",
+  "items": [
+    {
+      "store": "Rimi",
+      "name": "Paprika sarkana 80+ mm 1. šķira kg",
+      "price": "2.49€perkg249€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_269167_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Apelsīni Powell C/0-1, 1. šķ. Rimi",
+      "price": "1.49€perkg149€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_298039_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Grieķu jogurts Baltais bez piedevām 400g",
+      "price": "1.39€pergab.139€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_902612_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kāposti jaunie kg",
+      "price": "0.99€perkg099€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_283755_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Cāļu krūtiņas filejas Rimi kg",
+      "price": "6.39€perkg639€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_812523_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Piens Annele pasterizēts 2,5% 2l",
+      "price": "2.19€pergab.219€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_297677_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Avokado, gab",
+      "price": "0.49€pergab.049€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_219034_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Brokoļi RIMI 350 g",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_978280_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Mellenes Rimi, 400g",
+      "price": "4.99€pergab.499€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_974977_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Redīsi sarkanie 500G",
+      "price": "0.99€pergab.099€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_292038_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Biezpiena sieriņš Kārums vaniļas 45g",
+      "price": "0.47€pergab.047€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_269082_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Olas Balticovo brīv.vis.A/LM Nr.1 10gab.",
+      "price": "3.29€pergab.329€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_4002861_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Biezpiens Valmiera 5% 180g",
+      "price": "1.15€pergab.115€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_287798_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Tomātu mērce Spilva 510g",
+      "price": "1.55€pergab.155€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_156636_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kartupeļi Rimi gardēžu 900g",
+      "price": "1.59€pergab.159€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_299238_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Sviests Exporta 82,5% 200g",
+      "price": "1.79€pergab.179€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_223984_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Maltā cūkgaļa Rimi 500gr",
+      "price": "2.19€pergab.219€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_809278_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Pilnpiena biezpiens Valmiera 9% 180g",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_287799_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Seleriju kāti Rimi 450g",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_297913_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Skābais krējums Exporta 25% 360g",
+      "price": "1.49€pergab.149€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_227060_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Āboli Royal Gala 75-80 mm, 1.šķira, kg",
+      "price": "2.29€perkg229€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_269153_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Piens Tere 2,5% 1,5l",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_4006501_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Fileja tītara gaļas šķēlēs 105g",
+      "price": "1.49€pergab.149€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_224030_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Sparģeļi zaļie 250g",
+      "price": "1.99€pergab.199€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_996880_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Makaroni Dobele Nr.133 Fusilli 500g",
+      "price": "1.29€pergab.129€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_161758_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Virtuves dvieļi Rimi 2 slāņi 400 sloksnes",
+      "price": "3.99€pergab.399€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_816078_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Piens Marge UHT 2% 1l",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_263214_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Graudainais biezpiens Annele 7% 180g",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_266629_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Mango Rimi ātri sasaldēti 400g",
+      "price": "2.99€pergab.299€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_808687_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Biezpiens Žemaitijos 9% 1kg",
+      "price": "3.99€perkg399€/kg",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_286131_KGM_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Sēklu tostermaize bagātīgā 450g",
+      "price": "1.39€pergab.139€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_948041_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kartupeļi frī Rimi rievoti saldēti 1kg",
+      "price": "3.39€pergab.339€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_811419_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Pelmeņi Traditional ar vistas gaļu 400g",
+      "price": "4.29€pergab.429€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_297436_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kefīrs Limbažu 2,5% 1,5l",
+      "price": "1.89€pergab.189€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_273923_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Šampinjoni Rimi 250g",
+      "price": "1.19€pergab.119€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_297915_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Tītara krūt. filejas m. gaļa Rimi atdz. 500g",
+      "price": "3.99€pergab.399€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_815755_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Salāti lapu Latvijas gab. 1.šķ.",
+      "price": "0.99€pergab.099€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_4002469_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Provansas salāti Rimi 1.šķira 150g",
+      "price": "1.39€pergab.139€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_297792_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Biezpiena sieriņš Kārums šokolādes 45g",
+      "price": "0.47€pergab.047€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_269083_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kefīra maize Lielmaize 500g",
+      "price": "1.39€pergab.139€/gab.",
+      "img": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_auto,f_auto,h_216,q_1,w_216/d_ecommerce:backend-fallback.png/MAT_978823_PCE_LV",
+      "date": "Šonedēļ",
+      "cat": "Pārtika"
+    }
+  ]
 }
