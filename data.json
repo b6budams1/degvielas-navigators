@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-05T13:04:11.153Z",
+  "updatedAt": "2026-05-05T15:39:16.829Z",
   "items": [
     {
       "store": "Rimi",
@@ -33,14 +33,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Avokado, gab",
-      "price": "0.49 € per gab. 0 49 €/gab.",
+      "name": "Piens Annele pasterizēts 2,5% 2l",
+      "price": "2.19 € per gab. 2 19 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Piens Annele pasterizēts 2,5% 2l",
-      "price": "2.19 € per gab. 2 19 €/gab.",
+      "name": "Avokado, gab",
+      "price": "0.49 € per gab. 0 49 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -93,6 +93,12 @@
     },
     {
       "store": "Rimi",
+      "name": "Sviests Exporta 82,5% 200g",
+      "price": "1.79 € per gab. 1 79 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Maltā cūkgaļa Rimi 500gr",
       "price": "2.19 € per gab. 2 19 €/gab.",
       "category": "Pārtika"
@@ -105,14 +111,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Sviests Exporta 82,5% 200g",
-      "price": "1.79 € per gab. 1 79 €/gab.",
+      "name": "Seleriju kāti Rimi 450g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Seleriju kāti Rimi 450g",
-      "price": "1.19 € per gab. 1 19 €/gab.",
+      "name": "Skābais krējums Exporta 25% 360g",
+      "price": "1.49 € per gab. 1 49 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -125,12 +131,6 @@
       "store": "Rimi",
       "name": "Piens Tere 2,5% 1,5l",
       "price": "1.19 € per gab. 1 19 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Skābais krējums Exporta 25% 360g",
-      "price": "1.49 € per gab. 1 49 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -201,14 +201,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Šampinjoni Rimi 250g",
-      "price": "1.19 € per gab. 1 19 €/gab.",
+      "name": "Kefīrs Limbažu 2,5% 1,5l",
+      "price": "1.89 € per gab. 1 89 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Kefīrs Limbažu 2,5% 1,5l",
-      "price": "1.89 € per gab. 1 89 €/gab.",
+      "name": "Šampinjoni Rimi 250g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -219,14 +219,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Provansas salāti Rimi 1.šķira 150g",
-      "price": "1.39 € per gab. 1 39 €/gab.",
+      "name": "Salāti lapu Latvijas gab. 1.šķ.",
+      "price": "0.99 € per gab. 0 99 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
-      "name": "Salāti lapu Latvijas gab. 1.šķ.",
-      "price": "0.99 € per gab. 0 99 €/gab.",
+      "name": "Provansas salāti Rimi 1.šķira 150g",
+      "price": "1.39 € per gab. 1 39 €/gab.",
       "category": "Pārtika"
     },
     {
