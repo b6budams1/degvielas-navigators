@@ -8,21 +8,22 @@ const headers = {
 };
 
 async function scrape() {
+    console.log("🛠️ Sākam datu apkopi ar jaunākajiem selektoriem...");
     let db = [];
 
-    // --- RIMI ---
+    // --- RIMI (Salabots cenas un bildes nolasītājs) ---
     try {
-        const { data } = await axios.get('https://www.rimi.lv/e-veikals/lv/akcijas-piedavajumi?pageSize=80', { headers });
+        const { data } = await axios.get('https://www.rimi.lv/e-veikals/lv/akcijas-piedavajumi?pageSize=80', { headers, timeout: 15000 });
         const $ = cheerio.load(data);
         $('.product-grid__item').each((i, el) => {
             const name = $(el).find('.card__name').text().trim();
-            // Salabojam cenas nolasīšanu
-            const priceWhole = $(el).find('.price-tag > span').first().text().trim();
-            const priceCents = $(el).find('.price-tag > sup').text().trim() || '00';
-            const unitPrice = $(el).find('.card__price-per').text().trim(); // piem. 2.49 €/kg
+            // Jaunais Rimi cenas formāts
+            const priceWhole = $(el).find('.price-tag > span[aria-hidden="true"]').first().text().trim();
+            const priceCents = $(el).find('.price-tag > sup[aria-hidden="true"]').text().trim() || '00';
+            const unitPrice = $(el).find('.card__price-per').text().trim();
             
             let img = $(el).find('img').attr('src');
-            if (img) img = img.replace('small', 'large').replace('medium', 'large'); // Mēģinām dabūt labāku kvalitāti
+            if (img && img.includes('medium')) img = img.replace('medium', 'large');
 
             const date = $(el).find('.card__date').text().trim() || "Šonedēļ";
 
@@ -37,25 +38,38 @@ async function scrape() {
                 });
             }
         });
-    } catch (e) { console.log("Rimi kļūda"); }
+        console.log(`✅ Rimi: Atrasts ${db.length}`);
+    } catch (e) { console.log("❌ Rimi kļūda (lapas izmaiņas)"); }
 
-    // --- LIDL ---
+    // --- LIDL (Salabota adrese un struktūra) ---
     try {
-        const { data } = await axios.get('https://www.lidl.lv/lv/piedavajumi', { headers });
+        // Lidl tagad izmanto dinamiskas kampaņu lapas
+        const { data } = await axios.get('https://www.lidl.lv/c/lv-LV/aktualie-piedavajumi', { headers, timeout: 15000 });
         const $ = cheerio.load(data);
-        $('.ret-o-card').each((i, el) => {
-            const name = $(el).find('.ret-o-card__headline').text().trim();
-            const price = $(el).find('.ret-o-price-tag__price').text().trim();
-            const unit = $(el).find('.ret-o-price-tag__description').text().trim();
+        $('.product-grid-box').each((i, el) => {
+            const name = $(el).find('.product-grid-box__title').text().trim();
+            const priceText = $(el).find('.product-grid-box__price').text().trim();
             const img = $(el).find('img').attr('src');
-            const date = $(el).find('.n-o-m-label').first().text().trim() || "Akcija spēkā";
+            const date = "Piedāvājums spēkā";
 
-            if (name && price) db.push({ store: 'Lidl', name, price, unit, img, date });
+            if (name && priceText) {
+                // Notīram cenu no liekā teksta
+                const cleanPrice = priceText.match(/\d+,\d+/);
+                db.push({ 
+                    store: 'Lidl', 
+                    name, 
+                    price: cleanPrice ? cleanPrice[0] : priceText, 
+                    unit: '', 
+                    img, 
+                    date 
+                });
+            }
         });
-    } catch (e) { console.log("Lidl kļūda"); }
+        console.log(`✅ Lidl: Pievienots (Kopā: ${db.length})`);
+    } catch (e) { console.log("❌ Lidl kļūda (jauna lapa)"); }
 
     fs.writeFileSync('data.json', JSON.stringify({ updatedAt: new Date().toISOString(), items: db }, null, 2));
-    console.log(`✅ Savāktas ${db.length} preces`);
+    console.log(`🚀 DARBS PABEIGTS: ${db.length} akcijas saglabātas.`);
 }
 
 scrape();
