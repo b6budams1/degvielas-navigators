@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-05T01:27:17.566Z",
+  "updatedAt": "2026-05-05T04:50:53.681Z",
   "items": [
     {
       "store": "Rimi",
@@ -59,12 +59,6 @@
       "store": "Rimi",
       "name": "Biezpiena sieriņš Kārums vaniļas 45g",
       "price": "0.47 € per gab. 0 47 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Olas Balticovo brīv.vis.A/LM Nr.1 10gab.",
-      "price": "3.29 € per gab. 3 29 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -239,6 +233,12 @@
       "store": "Rimi",
       "name": "Vājpiena biezpiens Valmiera 0,5% 180g",
       "price": "1.09 € per gab. 1 09 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kabači kg",
+      "price": "1.99 € per kg 1 99 €/kg",
       "category": "Pārtika"
     }
   ]
