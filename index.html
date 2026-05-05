@@ -3,115 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akciju Navigators</title>
+    <title>Akciju Navigators PRO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #f0f2f5; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7f6; }
         
-        .product-card { 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            perspective: 1000px;
-        }
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { transform: scale(1.05); z-index: 50; }
         
-        /* Pelītes pievilkšanas efekts (Zoom) */
-        .product-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
+        .img-zoom { transition: transform 0.5s ease; }
+        .product-card:hover .img-zoom { transform: scale(1.2); }
 
-        .img-container { overflow: hidden; border-radius: 12px; }
-        .product-card:hover img {
-            transform: scale(1.15);
-        }
-        img { transition: transform 0.5s ease; }
-
-        /* Bukleta stila cena */
-        .price-tag {
+        .price-badge {
             font-family: 'Oswald', sans-serif;
-            background: #ffed00; /* Lidl dzeltenais */
+            background: #ffed00;
             color: #0050aa;
-            padding: 5px 15px;
-            transform: rotate(-2deg);
-            box-shadow: 3px 3px 0px #0050aa;
+            padding: 8px 15px;
+            box-shadow: 4px 4px 0px #0050aa;
         }
-        .Rimi .price-tag { background: #e30613; color: white; box-shadow: 3px 3px 0px #000; }
-
-        .unit-text { font-size: 11px; color: #64748b; line-height: 1.2; }
+        .Rimi .price-badge { background: #e30613; color: white; box-shadow: 4px 4px 0px #000; }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="p-4">
 
-    <div class="max-w-5xl mx-auto">
-        <!-- Logo un Meklētājs -->
-        <div class="text-center mb-10">
-            <h1 class="text-3xl font-900 text-slate-900 mb-6 flex justify-center items-center gap-2">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg">Akciju</span>Navigators
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col items-center mb-12">
+            <h1 class="text-4xl font-900 text-slate-900 mb-6 tracking-tighter">
+                🛒 <span class="bg-blue-600 text-white px-4 py-1 rounded-2xl">Akciju</span> Navigators
             </h1>
-            <div class="relative max-w-xl mx-auto">
-                <input type="text" id="q" oninput="draw()" placeholder="Ko Jūs meklējat?" 
-                    class="w-full p-5 pl-14 bg-white rounded-3xl shadow-xl border-none outline-none focus:ring-4 focus:ring-blue-100 transition-all text-lg">
-                <span class="absolute left-6 top-5 text-2xl opacity-20">🔍</span>
-            </div>
+            <input type="text" id="q" oninput="draw()" placeholder="Meklēt produktu..." 
+                class="w-full max-w-xl p-5 rounded-3xl shadow-2xl border-none focus:ring-4 focus:ring-blue-200 text-xl outline-none transition-all">
+            <div id="status" class="mt-4 text-slate-400 text-sm"></div>
         </div>
 
-        <div id="status" class="text-center text-slate-400 text-sm mb-8"></div>
-
-        <!-- Preču Režģis -->
-        <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
     </div>
 
 <script>
     let db = [];
-
     async function init() {
         const r = await fetch('data.json?v=' + Date.now());
         const d = await r.json();
         db = d.items || [];
-        document.getElementById('status').innerText = `Aktuālas ${db.length} akcijas • Atjaunots: ${new Date(d.updatedAt).toLocaleTimeString()}`;
+        document.getElementById('status').innerText = `Atrastas ${db.length} akcijas • ${new Date(d.updatedAt).toLocaleTimeString()}`;
         draw();
     }
 
     function draw() {
         const q = document.getElementById('q').value.toLowerCase();
         const container = document.getElementById('list');
-        
         const filtered = db.filter(i => i.name.toLowerCase().includes(q));
 
         container.innerHTML = filtered.map(i => `
-            <div class="product-card bg-white p-4 rounded-3xl border border-slate-100 flex flex-col ${i.store}">
-                <!-- Datums augšā -->
-                <div class="text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">📅 ${i.date}</div>
-                
-                <!-- Bilde ar Zoom -->
-                <div class="img-container h-48 mb-4 bg-slate-50 flex items-center justify-center">
-                    <img src="${i.img || 'https://via.placeholder.com/200'}" class="max-h-full object-contain">
-                </div>
-
-                <!-- Nosaukums un Cena (Bukleta izkārtojums) -->
-                <div class="flex justify-between items-start gap-2">
-                    <div class="flex-1">
-                        <h3 class="text-base font-bold text-slate-800 leading-tight mb-1">${i.name}</h3>
-                        <div class="unit-text">${i.unit || ''}</div>
+            <div class="product-card bg-white rounded-[2rem] p-6 shadow-lg flex flex-col justify-between ${i.store}">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[10px] font-black uppercase tracking-tighter opacity-30">${i.store}</span>
+                        <span class="text-[10px] text-slate-400 font-bold italic">📅 ${i.date}</span>
                     </div>
-                    
-                    <div class="flex flex-col items-end">
-                        <div class="price-tag text-3xl font-black">
-                            ${i.price}<span class="text-lg ml-0.5">€</span>
-                        </div>
+                    <div class="overflow-hidden rounded-2xl h-48 mb-6 bg-slate-50 flex items-center justify-center">
+                        <img src="${i.img || 'https://via.placeholder.com/300'}" class="img-zoom max-h-full object-contain">
                     </div>
+                    <h3 class="text-lg font-bold text-slate-800 leading-snug mb-2">${i.name}</h3>
                 </div>
-
-                <!-- Veikala zīme -->
-                <div class="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
-                    <span class="text-[10px] font-black text-slate-300 uppercase">${i.store} EXCLUSIVE</span>
-                    <button class="bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full hover:bg-blue-600 transition-colors">PIEVIENOT</button>
+                <div class="flex justify-between items-end mt-4">
+                    <span class="text-xs text-slate-400 font-bold uppercase">${i.unit}</span>
+                    <div class="price-badge text-4xl font-black">${i.price}€</div>
                 </div>
             </div>
         `).join('');
     }
-
     init();
 </script>
 </body>
