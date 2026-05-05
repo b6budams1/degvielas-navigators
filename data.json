@@ -1,21 +1,29 @@
 {
-  "updatedAt": "2026-05-05T19:23:51.027Z",
+  "updatedAt": "2026-05-05T19:35:08.702Z",
   "items": [
     {
       "store": "Lidl",
       "name": "Svaigas avenes",
       "price": "1.79",
-      "unit": "125 g iepakojums (14.32 €/kg)",
+      "unit": "125g",
       "img": "https://sc01.alicdn.com/kf/A76c9db96a2504dd0ac38c476b4309173X.png",
-      "date": "Akcija līdz 10.05"
+      "date": "Līdz 10.05"
     },
     {
       "store": "Rimi",
-      "name": "Paprika sarkana, kg",
+      "name": "Paprika sarkana",
       "price": "2.49",
-      "unit": "1. šķira",
+      "unit": "kg",
       "img": "https://www.rimi.lv/e-veikals/medias/680385-L01.jpg?context=bWFzdGVyfGltYWdlc3w4NTU0NHxpbWFnZS9qcGVnfGltYWdlcy9oNTMvaGUwLzg4OTU2NTIxOTY4OTQuanBnfDcxZWRkZjFmZTQ4OWYyNmY0ZTAzYmEyODJlNDYwZTUxOWE5YmU4YTkzZTA4ZjA3ZTVkMjM1ZjM0ZTEwZTM3ZjA",
-      "date": "Līdz svētdienai"
+      "date": "Šonedēļ"
+    },
+    {
+      "store": "Maxima",
+      "name": "Kafija Jacobs Krönung",
+      "price": "5.99",
+      "unit": "500g",
+      "img": "https://www.barbora.lv/medias/sys_master/root/h37/h04/9024564887582.jpg",
+      "date": "Līdz 12.05"
     }
   ]
 }
