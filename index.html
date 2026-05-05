@@ -7,68 +7,63 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@700&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; }
-        
-        /* Kartītes stils */
-        .product-card { 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border-radius: 24px;
-        }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; }
         
         /* HOVER ZOOM: Bilde izaug, kartīte paceļas */
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-        .img-wrap { overflow: hidden; border-radius: 18px; }
-        .product-card:hover img { transform: scale(1.1); }
+        .product-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border-radius: 24px; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.15); z-index: 50; }
+        
+        .img-wrap { overflow: hidden; border-radius: 20px; }
+        .product-card:hover img { transform: scale(1.15); }
         img { transition: transform 0.6s ease; }
 
-        /* LIDL STILA CENA (Dzeltena kaste labajā pusē) */
-        .price-box {
+        /* LIDL STILA CENA (Dzeltena/Sarkana kaste labajā pusē) */
+        .price-tag {
             font-family: 'Oswald', sans-serif;
-            background: #ffed00;
+            background: #ffed00; /* Lidl dzeltenais */
             color: #0050aa;
-            padding: 10px 15px;
-            min-width: 90px;
-            text-align: center;
-            line-height: 1;
+            padding: 8px 15px;
             box-shadow: 4px 4px 0px #0050aa;
-            border-radius: 4px;
+            border-radius: 2px;
+            transform: rotate(-1deg);
         }
-        .Rimi .price-box { background: #e30613; color: white; box-shadow: 4px 4px 0px #000; }
-        .Maxima .price-box { background: #004a99; color: white; box-shadow: 4px 4px 0px #ffed00; }
+        .Rimi .price-tag { background: #e30613; color: white; box-shadow: 4px 4px 0px #000; }
+        .Maxima .price-tag { background: #004a99; color: white; box-shadow: 4px 4px 0px #ffed00; }
     </style>
 </head>
 <body class="p-4 md:p-10">
 
     <div class="max-w-6xl mx-auto">
-        <!-- Moderns Header -->
+        <!-- Logo un Meklētājs -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-900 text-slate-900 mb-6 flex justify-center items-center gap-3">
-                <span class="bg-blue-600 text-white px-4 py-1 rounded-2xl rotate-[-2deg]">AKCIJU</span>
-                <span class="tracking-tight">NAVIGATORS</span>
+            <h1 class="text-4xl font-900 mb-6 flex justify-center items-center gap-3">
+                <span class="bg-blue-600 text-white px-5 py-2 rounded-2xl rotate-[-2deg] shadow-lg">AKCIJU</span>
+                <span class="tracking-tighter">NAVIGATORS</span>
             </h1>
             <div class="relative max-w-2xl mx-auto">
-                <input type="text" id="q" oninput="draw()" placeholder="Meklēt produktu vai veikalu..." 
-                    class="w-full p-6 pl-16 bg-white rounded-[2rem] shadow-2xl border-none outline-none focus:ring-4 focus:ring-blue-100 text-xl transition-all">
+                <input type="text" id="q" oninput="draw()" placeholder="Meklēt produktu..." 
+                    class="w-full p-6 pl-16 bg-white rounded-[2.5rem] shadow-2xl border-none outline-none focus:ring-4 focus:ring-blue-100 text-xl transition-all">
                 <span class="absolute left-6 top-6 text-2xl opacity-20">🔍</span>
             </div>
-            <div id="status" class="mt-4 text-slate-400 font-bold text-xs uppercase tracking-widest"></div>
+            <div id="status" class="mt-6 text-slate-400 font-bold text-[10px] uppercase tracking-[0.2em]"></div>
         </div>
 
         <!-- Akciju Režģis -->
-        <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+        <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"></div>
     </div>
 
 <script>
     let db = [];
     async function init() {
-        const r = await fetch('data.json?v=' + Date.now());
-        const d = await r.json();
-        db = d.items || [];
-        document.getElementById('status').innerText = `Atrastas ${db.length} akcijas • Atjaunināts: ${new Date(d.updatedAt).toLocaleTimeString()}`;
-        draw();
+        try {
+            const r = await fetch('data.json?v=' + Date.now());
+            const d = await r.json();
+            db = d.items || [];
+            document.getElementById('status').innerText = `Atrastas ${db.length} akcijas • ${new Date(d.updatedAt).toLocaleTimeString()}`;
+            draw();
+        } catch (e) {
+            document.getElementById('status').innerText = "⚠️ Dati tiek gatavoti...";
+        }
     }
 
     function draw() {
@@ -80,24 +75,23 @@
             <div class="product-card bg-white p-6 shadow-sm border border-slate-100 flex flex-col justify-between ${i.store}">
                 <div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-[10px] font-900 px-2 py-1 bg-slate-100 rounded text-slate-500 uppercase">${i.store}</span>
-                        <span class="text-[10px] text-slate-300 font-bold tracking-tighter">${i.date}</span>
+                        <span class="text-[9px] font-900 px-2 py-1 bg-slate-100 rounded text-slate-500 uppercase">${i.store}</span>
+                        <span class="text-[9px] text-slate-300 font-black italic">${i.date}</span>
                     </div>
                     
-                    <div class="img-wrap h-48 bg-slate-50 flex items-center justify-center p-4 mb-6">
+                    <div class="img-wrap h-44 bg-slate-50 flex items-center justify-center p-4 mb-6">
                         <img src="${i.img || 'https://via.placeholder.com/300'}" class="max-h-full object-contain">
                     </div>
                 </div>
 
-                <div class="flex justify-between items-end gap-3">
+                <div class="flex justify-between items-end gap-2">
                     <div class="flex-1">
-                        <h3 class="text-lg font-bold text-slate-800 leading-tight mb-1">${i.name}</h3>
-                        <p class="text-xs text-slate-400 font-medium">${i.unit || ''}</p>
+                        <h3 class="text-base font-bold text-slate-800 leading-tight mb-1">${i.name}</h3>
+                        <p class="text-[10px] text-slate-400 font-bold">${i.unit || ''}</p>
                     </div>
                     
-                    <div class="price-box">
-                        <div class="text-[10px] uppercase font-bold opacity-60 mb-1">Cena</div>
-                        <div class="text-3xl font-black">${i.price}<span class="text-lg ml-0.5">€</span></div>
+                    <div class="price-tag text-3xl font-black">
+                        ${i.price}<span class="text-lg ml-0.5">€</span>
                     </div>
                 </div>
             </div>
