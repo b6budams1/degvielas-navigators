@@ -1,13 +1,21 @@
 {
-  "updatedAt": "2026-05-05T19:18:04.216Z",
+  "updatedAt": "2026-05-05T19:23:51.027Z",
   "items": [
     {
       "store": "Lidl",
       "name": "Svaigas avenes",
-      "price": "1,79",
-      "unit": "125 g iepakojums (14,32 €/kg)",
+      "price": "1.79",
+      "unit": "125 g iepakojums (14.32 €/kg)",
       "img": "https://sc01.alicdn.com/kf/A76c9db96a2504dd0ac38c476b4309173X.png",
       "date": "Akcija līdz 10.05"
+    },
+    {
+      "store": "Rimi",
+      "name": "Paprika sarkana, kg",
+      "price": "2.49",
+      "unit": "1. šķira",
+      "img": "https://www.rimi.lv/e-veikals/medias/680385-L01.jpg?context=bWFzdGVyfGltYWdlc3w4NTU0NHxpbWFnZS9qcGVnfGltYWdlcy9oNTMvaGUwLzg4OTU2NTIxOTY4OTQuanBnfDcxZWRkZjFmZTQ4OWYyNmY0ZTAzYmEyODJlNDYwZTUxOWE5YmU4YTkzZTA4ZjA3ZTVkMjM1ZjM0ZTEwZTM3ZjA",
+      "date": "Līdz svētdienai"
     }
   ]
 }
