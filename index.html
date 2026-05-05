@@ -2,96 +2,95 @@
 <html lang="lv">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akciju Navigators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Akciju Navigators Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --rimi: #e30613; --maxima: #004a99; --lidl: #0050aa; }
-        body { font-family: -apple-system, system-ui, sans-serif; background: #f1f5f9; margin: 0; padding: 15px; color: #1e293b; }
-        .container { max-width: 600px; margin: 0 auto; }
-        
-        .header { text-align: center; padding: 20px 0; }
-        .search-box { position: sticky; top: 10px; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 100; margin-bottom: 20px; }
-        input { width: 100%; border: none; font-size: 18px; outline: none; background: transparent; }
-
-        .card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-left: 8px solid #ddd; }
-        .card.Rimi { border-color: var(--rimi); }
-        .card.Maxima { border-color: var(--maxima); }
-        .card.Lidl { border-color: var(--lidl); }
-
-        .store-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 4px; display: block; }
-        .p-name { font-weight: 700; color: #1e293b; font-size: 15px; line-height: 1.3; }
-        .p-price { font-size: 24px; font-weight: 900; color: #000; min-width: 80px; text-align: right; }
-        
-        #status-msg { text-align: center; font-size: 14px; color: #64748b; margin-bottom: 10px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .product-card { transition: transform 0.2s; }
+        .product-card:active { transform: scale(0.98); }
+        .store-badge { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 800; }
+        .Rimi { background: #fee2e2; color: #dc2626; }
+        .Lidl { background: #dbeafe; color: #1e40af; }
+        .Maxima { background: #dcfce7; color: #166534; }
     </style>
 </head>
-<body>
+<body class="pb-20">
 
-<div class="container">
-    <div class="header">
-        <h1 style="margin:0; font-size:24px;">🛍️ Akciju Navigators</h1>
-        <p style="margin:5px 0; font-size:14px; color:#64748b;">Visas akcijas vienā meklētājā</p>
+    <!-- Header & Search -->
+    <div class="sticky top-0 z-50 p-4 glass border-b border-slate-200">
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-2xl font-800 text-slate-900 mb-4 flex items-center gap-2">
+                🛍️ <span class="tracking-tight">Akciju<span class="text-blue-600">Navigators</span></span>
+            </h1>
+            <div class="relative">
+                <input type="text" id="q" oninput="draw()" placeholder="Meklēt produktu (piem. piens)" 
+                    class="w-full p-4 pl-12 bg-white border border-slate-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                <span class="absolute left-4 top-4 opacity-30">🔍</span>
+            </div>
+        </div>
     </div>
 
-    <div class="search-box">
-        <input type="text" id="q" placeholder="Ko meklējat? (piem. kafija)" oninput="draw()">
+    <!-- Results Grid -->
+    <div class="max-w-2xl mx-auto p-4">
+        <div id="status" class="text-sm text-slate-500 mb-4 text-center">Ielādē labākos piedāvājumus...</div>
+        <div id="list" class="grid grid-cols-2 gap-4">
+            <!-- Cards will be injected here -->
+        </div>
     </div>
 
-    <div id="status-msg">Ielādē datus...</div>
-    <div id="list"></div>
-</div>
+    <!-- Bottom Menu (App style) -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 glass border-t border-slate-200 flex justify-around items-center">
+        <button onclick="filter('')" class="text-xs font-bold text-blue-600">🏠 VISI</button>
+        <button onclick="filter('Rimi')" class="text-xs font-bold text-slate-400">RIMI</button>
+        <button onclick="filter('Lidl')" class="text-xs font-bold text-slate-400">LIDL</button>
+    </div>
 
 <script>
     let db = [];
 
     async function init() {
-        const msg = document.getElementById('status-msg');
         try {
-            // Ielādējam datus
             const r = await fetch('data.json?v=' + Date.now());
-            if (!r.ok) throw new Error();
             const d = await r.json();
-            
             db = d.items || [];
-            msg.innerText = `Atrastas ${db.length} aktuālas akcijas`;
-            
-            // Ja datu nav, parādām instrukciju
-            if (db.length === 0) {
-                msg.innerHTML = "⚠️ Akcijas vēl nav savāktas. <br>Lūdzu, palaidiet <b>Run workflow</b> savā GitHub profilā!";
-            }
-
+            document.getElementById('status').innerText = `Atrastas ${db.length} akcijas • Atjaunots: ${new Date(d.updatedAt).toLocaleTimeString()}`;
             draw();
         } catch (e) {
-            msg.innerText = "❌ Kļūda ielādējot data.json. Vai robots ir palaists?";
+            document.getElementById('status').innerText = "⚠️ Dati vēl nav gatavi. Lūdzu, pagaidiet...";
         }
     }
 
-    function draw() {
+    function draw(filterStore = '') {
         const q = document.getElementById('q').value.toLowerCase();
-        const listDiv = document.getElementById('list');
+        const container = document.getElementById('list');
         
         const filtered = db.filter(i => 
-            i.name.toLowerCase().includes(q) || 
-            i.store.toLowerCase().includes(q)
+            (i.name.toLowerCase().includes(q) || i.store.toLowerCase().includes(q)) &&
+            (filterStore === '' || i.store === filterStore)
         );
 
-        listDiv.innerHTML = filtered.map(i => `
-            <div class="card ${i.store}">
-                <div style="flex: 1; padding-right: 15px;">
-                    <span class="store-tag">${i.store}</span>
-                    <span class="p-name">${i.name}</span>
+        container.innerHTML = filtered.map(i => `
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="h-32 bg-slate-50 flex items-center justify-center p-2">
+                    <img src="${i.img || 'https://via.placeholder.com/150?text=Nav+bildes'}" class="max-h-full object-contain mix-blend-multiply">
                 </div>
-                <div class="p-price">${i.price}${i.price.includes('€') ? '' : '€'}</div>
+                <div class="p-3">
+                    <span class="store-badge ${i.store}">${i.store}</span>
+                    <h3 class="text-sm font-bold text-slate-800 mt-1 line-clamp-2 h-10">${i.name}</h3>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-xl font-800 text-slate-900">${i.price}</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-1">📅 ${i.date}</p>
+                </div>
             </div>
         `).join('');
-
-        if (filtered.length === 0 && db.length > 0) {
-            listDiv.innerHTML = '<p style="text-align:center; color:#64748b; margin-top:40px;">Neko neatradām. <br>Mēģiniet citu vārdu (piemēram, "piens").</p>';
-        }
     }
 
+    function filter(s) { draw(s); }
     init();
 </script>
-
 </body>
 </html>
