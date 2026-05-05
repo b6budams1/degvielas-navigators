@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-05T07:09:49.565Z",
+  "updatedAt": "2026-05-05T09:49:36.483Z",
   "items": [
     {
       "store": "Rimi",
@@ -105,6 +105,12 @@
     },
     {
       "store": "Rimi",
+      "name": "Sviests Exporta 82,5% 200g",
+      "price": "1.79 € per gab. 1 79 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
       "name": "Seleriju kāti Rimi 450g",
       "price": "1.19 € per gab. 1 19 €/gab.",
       "category": "Pārtika"
@@ -117,20 +123,8 @@
     },
     {
       "store": "Rimi",
-      "name": "Sviests Exporta 82,5% 200g",
-      "price": "1.79 € per gab. 1 79 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
       "name": "Piens Tere 2,5% 1,5l",
       "price": "1.19 € per gab. 1 19 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Sparģeļi zaļie 250g",
-      "price": "1.99 € per gab. 1 99 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -147,14 +141,20 @@
     },
     {
       "store": "Rimi",
-      "name": "Virtuves dvieļi Rimi 2 slāņi 400 sloksnes",
-      "price": "3.99 € per gab. 3 99 €/gab.",
+      "name": "Sparģeļi zaļie 250g",
+      "price": "1.99 € per gab. 1 99 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
       "name": "Makaroni Dobele Nr.133 Fusilli 500g",
       "price": "1.29 € per gab. 1 29 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Virtuves dvieļi Rimi 2 slāņi 400 sloksnes",
+      "price": "3.99 € per gab. 3 99 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -183,20 +183,14 @@
     },
     {
       "store": "Rimi",
-      "name": "Kartupeļi frī Rimi rievoti saldēti 1kg",
-      "price": "3.39 € per gab. 3 39 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
-      "name": "Šampinjoni Rimi 250g",
-      "price": "1.19 € per gab. 1 19 €/gab.",
-      "category": "Pārtika"
-    },
-    {
-      "store": "Rimi",
       "name": "Sēklu tostermaize bagātīgā 450g",
       "price": "1.39 € per gab. 1 39 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Kartupeļi frī Rimi rievoti saldēti 1kg",
+      "price": "3.39 € per gab. 3 39 €/gab.",
       "category": "Pārtika"
     },
     {
@@ -207,14 +201,20 @@
     },
     {
       "store": "Rimi",
-      "name": "Tītara krūt. filejas m. gaļa Rimi atdz. 500g",
-      "price": "3.99 € per gab. 3 99 €/gab.",
+      "name": "Šampinjoni Rimi 250g",
+      "price": "1.19 € per gab. 1 19 €/gab.",
       "category": "Pārtika"
     },
     {
       "store": "Rimi",
       "name": "Kefīrs Limbažu 2,5% 1,5l",
       "price": "1.89 € per gab. 1 89 €/gab.",
+      "category": "Pārtika"
+    },
+    {
+      "store": "Rimi",
+      "name": "Tītara krūt. filejas m. gaļa Rimi atdz. 500g",
+      "price": "3.99 € per gab. 3 99 €/gab.",
       "category": "Pārtika"
     },
     {
