@@ -2,32 +2,33 @@ name: Update Prices
 
 on:
   schedule:
-    - cron: '0 * * * *' # Darbosies katru stundu
-  workflow_dispatch: # Atļauj Tev palaist manuāli
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+# Šis bloks tagad attiecas uz VISIEM soļiem un noņem brīdinājumu
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4 # Atjaunots uz v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 # Atjaunots uz v4
+        uses: actions/setup-node@v4
         with:
-          node-version: '24' # Šis izlabo Tavu kļūdu!
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install axios cheerio
 
       - name: Run Scraper
         run: node fuel_mvp.js
-        env:
-          # Šī rinda piespiež GitHub izmantot jauno Node versiju visām darbībām
-          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Commit and Push
         run: |
